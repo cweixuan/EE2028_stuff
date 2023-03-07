@@ -1,0 +1,4 @@
+../Src/main.c:26:6:swap	24	static
+../Src/main.c:33:5:selection_sort_C	32	static
+../Src/main.c:50:6:printArray	32	static
+../Src/main.c:65:5:main	64	static

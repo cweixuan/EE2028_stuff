@@ -1,0 +1,10 @@
+00:51:21 **** Incremental Build of configuration Debug for project EE2028_AY2223S2_Assign1 ****
+make -j20 all 
+arm-none-eabi-size   EE2028_AY2223S2_Assign1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25704	    484	   1756	  27944	   6d28	EE2028_AY2223S2_Assign1.elf
+Finished building: default.size.stdout
+ 
+
+00:51:21 Build Finished. 0 errors, 0 warnings. (took 86ms)
+

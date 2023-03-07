@@ -3,16 +3,4 @@
 	<section name="ExternalProjectImportWizard">
 		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="true"/>
 	</section>
-	<section name="SmartImportWizard">
-		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
-		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
-		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
-		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
-		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
-			<item value="D:\stuff\nus\EE2028\Labs\EE2028_AY2223S2_Assign1_bef"/>
-			<item value="D:\stuff\nus\EE2028\Labs\EE2028_AY2223S1_Assign1"/>
-			<item value="C:\Users\cwx\Documents\Github\EE2028_stuff\blink_plain_C"/>
-			<item value="C:\Users\cwx\Documents\Github\EE2028_stuff\asm_basic"/>
-		</list>
-	</section>
 </section>

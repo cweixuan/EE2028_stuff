@@ -1,11 +1,14 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=6d51f9caf83324063ac841ab63c63522c4e2ee38
 applyBackground=false
 approved.defs.file.last.changed.time=1649720987000
 configurationInstallLocation=/C\:/ST/STM32CubeIDE_1.11.2/STM32CubeIDE/
 ct.upsell.display.after=1675155649999
 eclipse.preferences.version=1
 iconcolormode=primary
-last.download.attempt.time=1676216089574
-lastConfiguration=1676216082851
-newinstall=false
+last.download.attempt.time=1675315923694
+lastConfiguration=1678169852334
+newinstall=true
 showWelcomeDialog=false
 workbench.theme=Dark Gray

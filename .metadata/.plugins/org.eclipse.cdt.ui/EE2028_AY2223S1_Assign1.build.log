@@ -1,0 +1,17 @@
+00:31:04 **** Incremental Build of configuration Debug for project EE2028_AY2223S1_Assign1 ****
+make -j20 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Src/selection_sort.d" -MT"Src/selection_sort.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/selection_sort.o" "../Src/selection_sort.s"
+arm-none-eabi-gcc -o "EE2028_AY2223S1_Assign1.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"D:\stuff\nus\EE2028\Labs\EE2028_AY2223S1_Assign1\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EE2028_AY2223S1_Assign1.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: EE2028_AY2223S1_Assign1.elf
+ 
+arm-none-eabi-size   EE2028_AY2223S1_Assign1.elf 
+arm-none-eabi-objdump -h -S  EE2028_AY2223S1_Assign1.elf  > "EE2028_AY2223S1_Assign1.list"
+   text	   data	    bss	    dec	    hex	filename
+  17384	    480	   1760	  19624	   4ca8	EE2028_AY2223S1_Assign1.elf
+Finished building: default.size.stdout
+ 
+Finished building: EE2028_AY2223S1_Assign1.list
+ 
+
+00:31:04 Build Finished. 0 errors, 0 warnings. (took 212ms)
+

@@ -10,8 +10,8 @@
 	.global main
 
 @ Equates, equivalent to #define in C program
-	.equ C,	20
-	.equ D,	400
+	.equ C,	0xFFFF
+	.equ D,	0xFFFFFFF
 
 main:
 @ Code starts here
@@ -22,7 +22,8 @@ main:
 	MUL R0, R0, R1
 	LDR R1, =C
 	LDR R2, =D
-	MLA R0, R1, R2, R0
+	UMLAL R0, R1, R2, R0
+	ADD R0, R0, #0x3
 	MOV R4, R0
 	LDR R3, =ANSWER
 	STR R4, [R3]
