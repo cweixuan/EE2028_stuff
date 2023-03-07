@@ -1,9 +1,11 @@
 applyBackground=false
 approved.defs.file.last.changed.time=1649720987000
-configurationInstallLocation=/C\:/ST/STM32CubeIDE_1.8.0/STM32CubeIDE/
+configurationInstallLocation=/C\:/ST/STM32CubeIDE_1.11.2/STM32CubeIDE/
+ct.upsell.display.after=1675155649999
 eclipse.preferences.version=1
 iconcolormode=primary
-last.download.attempt.time=1673234200418
-lastConfiguration=1674980957559
-newinstall=true
+last.download.attempt.time=1676216089574
+lastConfiguration=1676216082851
+newinstall=false
+showWelcomeDialog=false
 workbench.theme=Dark Gray
