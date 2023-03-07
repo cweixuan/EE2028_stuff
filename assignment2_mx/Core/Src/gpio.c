@@ -32,13 +32,22 @@
 
 /* USER CODE END 1 */
 
-/** Pinout Configuration
+/** Configure pins
 */
 void MX_GPIO_Init(void)
 {
 
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+
   /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
+
+  /*Configure GPIO pin : PtPin */
+  GPIO_InitStruct.Pin = PUSHBUTTON_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(PUSHBUTTON_GPIO_Port, &GPIO_InitStruct);
 
 }
 

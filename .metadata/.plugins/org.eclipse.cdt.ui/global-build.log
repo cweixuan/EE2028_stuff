@@ -1,144 +1,16 @@
-00:26:11 **** Clean-only build of configuration Debug for project EE2028_AY2223S1_Assign1 ****
-make -j20 clean 
-rm -rf ./Startup/startup_stm32l475vgtx.d ./Startup/startup_stm32l475vgtx.o
-rm -rf ./Src/main.d ./Src/main.o ./Src/main.su ./Src/selection_sort.d ./Src/selection_sort.o ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
-rm -rf EE2028_AY2223S1_Assign1.elf EE2028_AY2223S1_Assign1.list EE2028_AY2223S1_Assign1.map default.size.stdout
+17:55:34 **** Incremental Build of configuration Debug for project assignment2_mx ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/tasks/src/lps_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/lps_task.d" -MT"Core/tasks/src/lps_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/lps_task.o"
+arm-none-eabi-gcc "../Core/tasks/src/uart1_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/uart1_task.d" -MT"Core/tasks/src/uart1_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/uart1_task.o"
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+arm-none-eabi-g++ -o "assignment2_mx.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\EE2028_stuff\assignment2_mx\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_mx.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_mx.elf
  
-00:26:11 **** Build of configuration Debug for project EE2028_AY2223S1_Assign1 ****
-make -j20 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32l475vgtx.d" -MT"Startup/startup_stm32l475vgtx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32l475vgtx.o" "../Startup/startup_stm32l475vgtx.s"
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4 -DSTM32 -DDEBUG -DSTM32L475VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Src/selection_sort.d" -MT"Src/selection_sort.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/selection_sort.o" "../Src/selection_sort.s"
-arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4 -DSTM32 -DDEBUG -DSTM32L475VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
-arm-none-eabi-gcc -o "EE2028_AY2223S1_Assign1.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"D:\stuff\nus\EE2028\Labs\EE2028_AY2223S1_Assign1\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EE2028_AY2223S1_Assign1.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: EE2028_AY2223S1_Assign1.elf
- 
-arm-none-eabi-size   EE2028_AY2223S1_Assign1.elf 
-arm-none-eabi-objdump -h -S  EE2028_AY2223S1_Assign1.elf  > "EE2028_AY2223S1_Assign1.list"
+arm-none-eabi-size   assignment2_mx.elf 
+arm-none-eabi-objdump -h -S  assignment2_mx.elf  > "assignment2_mx.list"
    text	   data	    bss	    dec	    hex	filename
-  17360	    480	   1760	  19600	   4c90	EE2028_AY2223S1_Assign1.elf
+  53416	    492	   7836	  61744	   f130	assignment2_mx.elf
 Finished building: default.size.stdout
  
-Finished building: EE2028_AY2223S1_Assign1.list
- 
-00:29:50 **** Incremental Build of configuration Debug for project EE2028_AY2223S1_Assign1 ****
-make -j20 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4 -DSTM32 -DDEBUG -DSTM32L475VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "EE2028_AY2223S1_Assign1.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"D:\stuff\nus\EE2028\Labs\EE2028_AY2223S1_Assign1\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EE2028_AY2223S1_Assign1.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: EE2028_AY2223S1_Assign1.elf
- 
-arm-none-eabi-size   EE2028_AY2223S1_Assign1.elf 
-arm-none-eabi-objdump -h -S  EE2028_AY2223S1_Assign1.elf  > "EE2028_AY2223S1_Assign1.list"
-   text	   data	    bss	    dec	    hex	filename
-  17384	    480	   1760	  19624	   4ca8	EE2028_AY2223S1_Assign1.elf
-Finished building: default.size.stdout
- 
-Finished building: EE2028_AY2223S1_Assign1.list
- 
-00:30:10 **** Incremental Build of configuration Debug for project EE2028_AY2223S1_Assign1 ****
-make -j20 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4 -DSTM32 -DDEBUG -DSTM32L475VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "EE2028_AY2223S1_Assign1.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"D:\stuff\nus\EE2028\Labs\EE2028_AY2223S1_Assign1\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EE2028_AY2223S1_Assign1.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: EE2028_AY2223S1_Assign1.elf
- 
-arm-none-eabi-size   EE2028_AY2223S1_Assign1.elf 
-arm-none-eabi-objdump -h -S  EE2028_AY2223S1_Assign1.elf  > "EE2028_AY2223S1_Assign1.list"
-   text	   data	    bss	    dec	    hex	filename
-  17384	    480	   1760	  19624	   4ca8	EE2028_AY2223S1_Assign1.elf
-Finished building: default.size.stdout
- 
-Finished building: EE2028_AY2223S1_Assign1.list
- 
-00:31:04 **** Incremental Build of configuration Debug for project EE2028_AY2223S1_Assign1 ****
-make -j20 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Src/selection_sort.d" -MT"Src/selection_sort.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/selection_sort.o" "../Src/selection_sort.s"
-arm-none-eabi-gcc -o "EE2028_AY2223S1_Assign1.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"D:\stuff\nus\EE2028\Labs\EE2028_AY2223S1_Assign1\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EE2028_AY2223S1_Assign1.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: EE2028_AY2223S1_Assign1.elf
- 
-arm-none-eabi-size   EE2028_AY2223S1_Assign1.elf 
-arm-none-eabi-objdump -h -S  EE2028_AY2223S1_Assign1.elf  > "EE2028_AY2223S1_Assign1.list"
-   text	   data	    bss	    dec	    hex	filename
-  17384	    480	   1760	  19624	   4ca8	EE2028_AY2223S1_Assign1.elf
-Finished building: default.size.stdout
- 
-Finished building: EE2028_AY2223S1_Assign1.list
- 
-00:47:19 **** Clean-only build of configuration Debug for project EE2028_AY2223S2_Assign1 ****
-make -j20 clean 
-rm -rf ./Startup/startup_stm32l475vgtx.d ./Startup/startup_stm32l475vgtx.o
-rm -rf ./Src/main.d ./Src/main.o ./Src/main.su ./Src/selection_sort.d ./Src/selection_sort.o ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
-rm -rf EE2028_AY2223S2_Assign1.elf EE2028_AY2223S2_Assign1.list EE2028_AY2223S2_Assign1.map default.size.stdout
- 
-00:47:19 **** Build of configuration Debug for project EE2028_AY2223S2_Assign1 ****
-make -j20 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32l475vgtx.d" -MT"Startup/startup_stm32l475vgtx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32l475vgtx.o" "../Startup/startup_stm32l475vgtx.s"
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4 -DSTM32 -DDEBUG -DSTM32L475VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Src/selection_sort.d" -MT"Src/selection_sort.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/selection_sort.o" "../Src/selection_sort.s"
-arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32L4 -DSTM32 -DDEBUG -DSTM32L475VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
-arm-none-eabi-gcc -o "EE2028_AY2223S2_Assign1.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"D:\stuff\nus\EE2028\Labs\EE2028_AY2223S2_Assign1_bef\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EE2028_AY2223S2_Assign1.map" -Wl,--gc-sections -static -u _printf_float -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: EE2028_AY2223S2_Assign1.elf
- 
-arm-none-eabi-size   EE2028_AY2223S2_Assign1.elf 
-arm-none-eabi-objdump -h -S  EE2028_AY2223S2_Assign1.elf  > "EE2028_AY2223S2_Assign1.list"
-   text	   data	    bss	    dec	    hex	filename
-  25704	    484	   1756	  27944	   6d28	EE2028_AY2223S2_Assign1.elf
-Finished building: default.size.stdout
- 
-Finished building: EE2028_AY2223S2_Assign1.list
- 
-00:47:41 **** Incremental Build of configuration Debug for project EE2028_AY2223S2_Assign1 ****
-make -j20 all 
-arm-none-eabi-size   EE2028_AY2223S2_Assign1.elf 
-   text	   data	    bss	    dec	    hex	filename
-  25704	    484	   1756	  27944	   6d28	EE2028_AY2223S2_Assign1.elf
-Finished building: default.size.stdout
- 
-00:48:28 **** Incremental Build of configuration Debug for project EE2028_AY2223S2_Assign1 ****
-make -j20 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Src/selection_sort.d" -MT"Src/selection_sort.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/selection_sort.o" "../Src/selection_sort.s"
-arm-none-eabi-gcc -o "EE2028_AY2223S2_Assign1.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"D:\stuff\nus\EE2028\Labs\EE2028_AY2223S2_Assign1_bef\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EE2028_AY2223S2_Assign1.map" -Wl,--gc-sections -static -u _printf_float -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: EE2028_AY2223S2_Assign1.elf
- 
-arm-none-eabi-size   EE2028_AY2223S2_Assign1.elf 
-arm-none-eabi-objdump -h -S  EE2028_AY2223S2_Assign1.elf  > "EE2028_AY2223S2_Assign1.list"
-   text	   data	    bss	    dec	    hex	filename
-  25704	    484	   1756	  27944	   6d28	EE2028_AY2223S2_Assign1.elf
-Finished building: default.size.stdout
- 
-Finished building: EE2028_AY2223S2_Assign1.list
- 
-00:49:57 **** Incremental Build of configuration Debug for project EE2028_AY2223S2_Assign1 ****
-make -j20 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Src/selection_sort.d" -MT"Src/selection_sort.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/selection_sort.o" "../Src/selection_sort.s"
-arm-none-eabi-gcc -o "EE2028_AY2223S2_Assign1.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"D:\stuff\nus\EE2028\Labs\EE2028_AY2223S2_Assign1_bef\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EE2028_AY2223S2_Assign1.map" -Wl,--gc-sections -static -u _printf_float -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: EE2028_AY2223S2_Assign1.elf
- 
-arm-none-eabi-size   EE2028_AY2223S2_Assign1.elf 
-arm-none-eabi-objdump -h -S  EE2028_AY2223S2_Assign1.elf  > "EE2028_AY2223S2_Assign1.list"
-   text	   data	    bss	    dec	    hex	filename
-  25704	    484	   1756	  27944	   6d28	EE2028_AY2223S2_Assign1.elf
-Finished building: default.size.stdout
- 
-Finished building: EE2028_AY2223S2_Assign1.list
- 
-00:50:59 **** Incremental Build of configuration Debug for project EE2028_AY2223S2_Assign1 ****
-make -j20 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Src/selection_sort.d" -MT"Src/selection_sort.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/selection_sort.o" "../Src/selection_sort.s"
-arm-none-eabi-gcc -o "EE2028_AY2223S2_Assign1.elf" @"objects.list"  -lrdimon -mcpu=cortex-m4 -T"D:\stuff\nus\EE2028\Labs\EE2028_AY2223S2_Assign1_bef\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EE2028_AY2223S2_Assign1.map" -Wl,--gc-sections -static -u _printf_float -specs=rdimon.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: EE2028_AY2223S2_Assign1.elf
- 
-arm-none-eabi-size   EE2028_AY2223S2_Assign1.elf 
-arm-none-eabi-objdump -h -S  EE2028_AY2223S2_Assign1.elf  > "EE2028_AY2223S2_Assign1.list"
-   text	   data	    bss	    dec	    hex	filename
-  25704	    484	   1756	  27944	   6d28	EE2028_AY2223S2_Assign1.elf
-Finished building: default.size.stdout
- 
-Finished building: EE2028_AY2223S2_Assign1.list
- 
-00:51:21 **** Incremental Build of configuration Debug for project EE2028_AY2223S2_Assign1 ****
-make -j20 all 
-arm-none-eabi-size   EE2028_AY2223S2_Assign1.elf 
-   text	   data	    bss	    dec	    hex	filename
-  25704	    484	   1756	  27944	   6d28	EE2028_AY2223S2_Assign1.elf
-Finished building: default.size.stdout
+Finished building: assignment2_mx.list
  

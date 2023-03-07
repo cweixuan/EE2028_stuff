@@ -28,10 +28,12 @@ Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_magneto.o: \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c_ex.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h \
+ ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h \
+ ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h \
  ../Drivers/BSP/B-L475E-IOT01/../Components/lis3mdl/lis3mdl.h \
- d:\github\ee2028\test\drivers\bsp\components\common\magneto.h
+ ../Drivers/BSP/B-L475E-IOT01/../Components/lis3mdl/../Common/magneto.h
 ../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_magneto.h:
 ../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:
@@ -60,7 +62,9 @@ Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_magneto.o: \
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c_ex.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h:
 ../Drivers/BSP/B-L475E-IOT01/../Components/lis3mdl/lis3mdl.h:
-d:\github\ee2028\test\drivers\bsp\components\common\magneto.h:
+../Drivers/BSP/B-L475E-IOT01/../Components/lis3mdl/../Common/magneto.h:
