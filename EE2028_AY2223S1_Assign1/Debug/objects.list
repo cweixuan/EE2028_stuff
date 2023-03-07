@@ -1,4 +1,0 @@
-"./Src/main.o"
-"./Src/selection_sort.o"
-"./Src/sysmem.o"
-"./Startup/startup_stm32l475vgtx.o"
