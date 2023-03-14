@@ -10,7 +10,7 @@
 
 void lsm_init();
 void lsm_loop();
-void lsm_task(void* argument);
+void lsm_task(void* pvParameters);
 
 
 #endif /* TASKS_INC_LSM_TASK_H_ */

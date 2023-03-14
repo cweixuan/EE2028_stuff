@@ -11,7 +11,7 @@
 
 void hts_init();
 void hts_loop();
-void hts_task(void* argument);
+void hts_task(void* pvParameters);
 
 
 #endif /* TASKS_INC_HTS_TASK_H_ */

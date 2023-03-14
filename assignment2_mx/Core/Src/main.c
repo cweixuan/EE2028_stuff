@@ -94,7 +94,6 @@ int main(void)
   MX_DMA_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-  uint32_t ticker =0 ;
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */
@@ -108,37 +107,6 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  uint8_t tx_buffer[255];
-	  uint16_t tx_len;
-	  tx_len = sprintf((char*)tx_buffer,"test\n");
-		ticker ++;
-		float accel_data[3];
-		int16_t accel_data_i16[3] = { 0 };			// array to store the x, y and z readings.
-		if (ticker % 2 == 0){
-			BSP_ACCELERO_AccGetXYZ(accel_data_i16);		// read accelerometer
-			// the function above returns 16 bit integers which are acceleration in mg (9.8/1000 m/s^2).
-			// Converting to float to print the actual acceleration.
-			accel_data[0] = (float)accel_data_i16[0] * (9.8/1000.0f);
-			accel_data[1] = (float)accel_data_i16[1] * (9.8/1000.0f);
-			accel_data[2] = (float)accel_data_i16[2] * (9.8/1000.0f);
-			tx_len = sprintf((char*)tx_buffer,"AccelX : %f; Accel Y: %f; Accel Z: %f\n", accel_data[0], accel_data[1], accel_data[2]);
-			HAL_UART_Transmit_DMA(&huart1, tx_buffer,tx_len);
-		}
-		if (ticker % 3 == 0){
-			float temp_data;
-			temp_data = BSP_TSENSOR_ReadTemp();			// read temperature sensor
-			tx_len = sprintf((char*)tx_buffer,"Temp data: %f\n",temp_data);
-			HAL_UART_Transmit_DMA(&huart1, tx_buffer,tx_len);
-		}
-
-		if (ticker%5 == 0){
-			int16_t magneto_data[3]= {0};
-			BSP_MAGNETO_GetXYZ(magneto_data);
-			tx_len = sprintf((char*)tx_buffer, "magnetoX: %d, magnetoY: %d, magnetoZ: %d\n",
-					magneto_data[0],magneto_data[1], magneto_data[2]);
-			HAL_UART_Transmit_DMA(&huart1, tx_buffer,tx_len);
-		}
-		HAL_Delay(500);	// read once a ~second.
 
     /* USER CODE END WHILE */
 
@@ -166,10 +134,9 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_MSI;
-  RCC_OscInitStruct.MSIState = RCC_MSI_ON;
-  RCC_OscInitStruct.MSICalibrationValue = 0;
-  RCC_OscInitStruct.MSIClockRange = RCC_MSIRANGE_6;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
@@ -180,7 +147,7 @@ void SystemClock_Config(void)
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
-  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_MSI;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;

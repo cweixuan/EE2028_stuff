@@ -25,12 +25,12 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "rtos_incs.h"
 #include "lis_task.h"
 #include "lps_task.h"
 #include "lsm_task.h"
 #include "hts_task.h"
 #include "uart1_task.h"
-#include "rtos_vars.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -129,28 +129,30 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
-	UART1_queue = xQueueCreate(5,sizeof(queue_UART_msg_t));
-	if (UART1_queue == NULL){
-		//error somehow? lol
-	}
+	UART1_queue = xQueueCreate(5,sizeof(queue_UART_msg_t*));
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
   /* definition and creation of defaultTask */
-  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
+  osThreadDef(defaultTask, StartDefaultTask, osPriorityIdle, 0, 128);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
-  xTaskCreate(uart1_task, "uart_task", configMINIMAL_STACK_SIZE, (void*)1,
-		  /*priority*/ (UBaseType_t) 7, &uart1_task_handle);
-  xTaskCreate(lis_task, "lis_task", configMINIMAL_STACK_SIZE, (void*)1,
-		  /*priority*/ (UBaseType_t) 7, &lis_task_handle);
-  xTaskCreate(lps_task, "lps_task", configMINIMAL_STACK_SIZE, (void*)1,
-		  /*priority*/ (UBaseType_t) 7, &lps_task_handle);
-  xTaskCreate(hts_task, "hts_task", configMINIMAL_STACK_SIZE, (void*)1,
-		  /*priority*/ (UBaseType_t) 7, &hts_task_handle);
-  xTaskCreate(lsm_task, "lsm_task", configMINIMAL_STACK_SIZE, (void*)1,
-		  /*priority*/ (UBaseType_t) 7, &lsm_task_handle);
+
+  BaseType_t status =0;
+	if (UART1_queue != NULL){
+		//error somehow? lol
+	  status = xTaskCreate(lis_task, "lis_task", configMINIMAL_STACK_SIZE, (void*)1,
+			  /*priority*/ (UBaseType_t) 7, &lis_task_handle);
+	  status = xTaskCreate(uart1_task, "uart_task", configMINIMAL_STACK_SIZE, (void*)1,
+			  /*priority*/ (UBaseType_t) 7, &uart1_task_handle);
+	  status = xTaskCreate(lps_task, "lps_task", configMINIMAL_STACK_SIZE, (void*)1,
+			  /*priority*/ (UBaseType_t) 7, &lps_task_handle);
+	  status = xTaskCreate(hts_task, "hts_task", configMINIMAL_STACK_SIZE, (void*)1,
+			  /*priority*/ (UBaseType_t) 7, &hts_task_handle);
+	  status = xTaskCreate(lsm_task, "lsm_task", configMINIMAL_STACK_SIZE, (void*)1,
+			  /*priority*/ (UBaseType_t) 7, &lsm_task_handle);
+	}
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
 
@@ -169,7 +171,7 @@ void StartDefaultTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+    osDelay(10000);
   }
   /* USER CODE END StartDefaultTask */
 }

@@ -46,10 +46,10 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
- ../Core/Src/../tasks/inc/lis_task.h ../Core/Src/../tasks/inc/lps_task.h \
- ../Core/Src/../tasks/inc/lsm_task.h ../Core/Src/../tasks/inc/hts_task.h \
- ../Core/Src/../tasks/inc/uart1_task.h ../Core/Inc/rtos_vars.h \
- ../Core/Inc/main.h
+ ../Core/Inc/rtos_incs.h ../Core/Inc/main.h ../Core/tasks/inc/typedefs.h \
+ ../Core/tasks/inc/lis_task.h ../Core/tasks/inc/lps_task.h \
+ ../Core/tasks/inc/lsm_task.h ../Core/tasks/inc/hts_task.h \
+ ../Core/tasks/inc/uart1_task.h
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
@@ -98,10 +98,11 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
 ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
-../Core/Src/../tasks/inc/lis_task.h:
-../Core/Src/../tasks/inc/lps_task.h:
-../Core/Src/../tasks/inc/lsm_task.h:
-../Core/Src/../tasks/inc/hts_task.h:
-../Core/Src/../tasks/inc/uart1_task.h:
-../Core/Inc/rtos_vars.h:
+../Core/Inc/rtos_incs.h:
 ../Core/Inc/main.h:
+../Core/tasks/inc/typedefs.h:
+../Core/tasks/inc/lis_task.h:
+../Core/tasks/inc/lps_task.h:
+../Core/tasks/inc/lsm_task.h:
+../Core/tasks/inc/hts_task.h:
+../Core/tasks/inc/uart1_task.h:

@@ -11,6 +11,6 @@
 
 void lis_init();
 void lis_loop();
-void lis_task(void* argument);
+void lis_task(void* pvParameters);
 
 #endif /* TASKS_INC_LIS_TASK_H_ */

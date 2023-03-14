@@ -8,6 +8,7 @@
 
 
 
+#include "rtos_incs.h"
 #include "stm32l475e_iot01_tsensor.h"
 #include "stdio.h"
 #include "hts_task.h"
@@ -20,10 +21,12 @@ void hts_loop(){
 
 }
 
-void hts_task(void* argument){
+void hts_task(void* pvParameters){
 	hts_init();
+	vTaskDelay(5);
 	while(1){
 		hts_loop();
+		vTaskDelay(5);
 	}
 }
 

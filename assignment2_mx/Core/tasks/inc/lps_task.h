@@ -10,7 +10,7 @@
 
 void lps_init();
 void lps_loop();
-void lps_task(void* argument);
+void lps_task(void* pvParameters);
 
 
 #endif /* TASKS_INC_LPS_TASK_H_ */
