@@ -21,4 +21,10 @@ extern TaskHandle_t hts_task_handle;
 
 extern QueueHandle_t UART1_queue;
 
+typedef struct {
+	float x;
+	float y;
+	float z;
+}axis_data_t;
+
 #endif /* INC_RTOS_INCS_H_ */

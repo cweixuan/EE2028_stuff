@@ -25,9 +25,6 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_accelero.h"
-#include "../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_tsensor.h"
-#include "../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_magneto.h"
 #include "stdio.h"
 /* USER CODE END Includes */
 
@@ -48,7 +45,9 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 
+}
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -70,7 +69,6 @@ void MX_FREERTOS_Init(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/

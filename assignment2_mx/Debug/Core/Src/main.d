@@ -53,13 +53,19 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Src/../../Drivers/BSP/B-L475E-IOT01/../Components/lsm6dsl/lsm6dsl.h \
  d:\github\ee2028_stuff\assignment2_mx\drivers\bsp\components\common\accelero.h \
  d:\github\ee2028_stuff\assignment2_mx\drivers\bsp\components\common\gyro.h \
+ ../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h \
  ../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_tsensor.h \
  ../Core/Src/../../Drivers/BSP/B-L475E-IOT01/../Components/hts221/hts221.h \
  d:\github\ee2028_stuff\assignment2_mx\drivers\bsp\components\common\hsensor.h \
  d:\github\ee2028_stuff\assignment2_mx\drivers\bsp\components\common\tsensor.h \
+ ../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_hsensor.h \
  ../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_magneto.h \
  ../Core/Src/../../Drivers/BSP/B-L475E-IOT01/../Components/lis3mdl/lis3mdl.h \
- d:\github\ee2028_stuff\assignment2_mx\drivers\bsp\components\common\magneto.h
+ d:\github\ee2028_stuff\assignment2_mx\drivers\bsp\components\common\magneto.h \
+ ../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_psensor.h \
+ ../Core/Src/../../Drivers/BSP/B-L475E-IOT01/../Components/lps22hb/lps22hb.h \
+ d:\github\ee2028_stuff\assignment2_mx\drivers\bsp\components\common\psensor.h \
+ d:\github\ee2028_stuff\assignment2_mx\drivers\bsp\components\common\tsensor.h
 ../Core/Inc/main.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:
 ../Core/Inc/stm32l4xx_hal_conf.h:
@@ -117,10 +123,16 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Src/../../Drivers/BSP/B-L475E-IOT01/../Components/lsm6dsl/lsm6dsl.h:
 d:\github\ee2028_stuff\assignment2_mx\drivers\bsp\components\common\accelero.h:
 d:\github\ee2028_stuff\assignment2_mx\drivers\bsp\components\common\gyro.h:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.h:
 ../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_tsensor.h:
 ../Core/Src/../../Drivers/BSP/B-L475E-IOT01/../Components/hts221/hts221.h:
 d:\github\ee2028_stuff\assignment2_mx\drivers\bsp\components\common\hsensor.h:
 d:\github\ee2028_stuff\assignment2_mx\drivers\bsp\components\common\tsensor.h:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_hsensor.h:
 ../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_magneto.h:
 ../Core/Src/../../Drivers/BSP/B-L475E-IOT01/../Components/lis3mdl/lis3mdl.h:
 d:\github\ee2028_stuff\assignment2_mx\drivers\bsp\components\common\magneto.h:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_psensor.h:
+../Core/Src/../../Drivers/BSP/B-L475E-IOT01/../Components/lps22hb/lps22hb.h:
+d:\github\ee2028_stuff\assignment2_mx\drivers\bsp\components\common\psensor.h:
+d:\github\ee2028_stuff\assignment2_mx\drivers\bsp\components\common\tsensor.h:

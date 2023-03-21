@@ -52,28 +52,6 @@
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-void pop_registers_from_fault_stack(unsigned int * hardfault_args)
-{
-unsigned int stacked_r0;
-unsigned int stacked_r1;
-unsigned int stacked_r2;
-unsigned int stacked_r3;
-unsigned int stacked_r12;
-unsigned int stacked_lr;
-unsigned int stacked_pc;
-unsigned int stacked_psr;
-    stacked_r0 = ((unsigned long) hardfault_args[0]);
-    stacked_r1 = ((unsigned long) hardfault_args[1]);
-    stacked_r2 = ((unsigned long) hardfault_args[2]);
-    stacked_r3 = ((unsigned long) hardfault_args[3]);
-    stacked_r12 = ((unsigned long) hardfault_args[4]);
-    stacked_lr = ((unsigned long) hardfault_args[5]);
-    stacked_pc = ((unsigned long) hardfault_args[6]);
-    stacked_psr = ((unsigned long) hardfault_args[7]);
-    /* Inspect stacked_pc to locate the offending instruction. */
-    for( ;; );
-}
-
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
@@ -111,6 +89,12 @@ void HardFault_Handler(void)
 {
   /* USER CODE BEGIN HardFault_IRQn 0 */
 
+  /* USER CODE END HardFault_IRQn 0 */
+  while (1)
+  {
+    /* USER CODE BEGIN W1_HardFault_IRQn 0 */
+    /* USER CODE END W1_HardFault_IRQn 0 */
+  }
 }
 
 /**

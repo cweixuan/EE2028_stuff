@@ -16,10 +16,11 @@ void uart1_task(void* pvParameters){
 	//init code
 	queue_UART_msg_t *uart_q;
 	while(1){
-		xQueueReceive(UART1_queue, &uart_q, 0);
+		//running code
+		xQueueReceive(UART1_queue, (void *)&uart_q, 10000);
 		if (uart_q->type == TX){
 			HAL_UART_Transmit_DMA(&huart1, (uint8_t*)uart_q->uart_chars, uart_q->char_len);
 		}
-		//running code
+		vTaskDelay(1);
 	}
 }

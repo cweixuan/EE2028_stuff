@@ -79,6 +79,18 @@ void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackTy
 /* GetTimerTaskMemory prototype (linked to static allocation support) */
 void vApplicationGetTimerTaskMemory( StaticTask_t **ppxTimerTaskTCBBuffer, StackType_t **ppxTimerTaskStackBuffer, uint32_t *pulTimerTaskStackSize );
 
+/* Hook prototypes */
+void vApplicationStackOverflowHook(xTaskHandle xTask, signed char *pcTaskName);
+
+/* USER CODE BEGIN 4 */
+__weak void vApplicationStackOverflowHook(xTaskHandle xTask, signed char *pcTaskName)
+{
+   /* Run time stack overflow checking is performed if
+   configCHECK_FOR_STACK_OVERFLOW is defined to 1 or 2. This hook function is
+   called if a stack overflow is detected. */
+}
+/* USER CODE END 4 */
+
 /* USER CODE BEGIN GET_IDLE_TASK_MEMORY */
 static StaticTask_t xIdleTaskTCBBuffer;
 static StackType_t xIdleStack[configMINIMAL_STACK_SIZE];
@@ -134,25 +146,25 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the thread(s) */
   /* definition and creation of defaultTask */
-  osThreadDef(defaultTask, StartDefaultTask, osPriorityIdle, 0, 128);
+  osThreadDef(defaultTask, StartDefaultTask, osPriorityIdle, 0, 512);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
 
   BaseType_t status =0;
-	if (UART1_queue != NULL){
+//	if (UART1_queue != NULL){
 		//error somehow? lol
-	  status = xTaskCreate(lis_task, "lis_task", configMINIMAL_STACK_SIZE, (void*)1,
-			  /*priority*/ (UBaseType_t) 7, &lis_task_handle);
-	  status = xTaskCreate(uart1_task, "uart_task", configMINIMAL_STACK_SIZE, (void*)1,
-			  /*priority*/ (UBaseType_t) 7, &uart1_task_handle);
-	  status = xTaskCreate(lps_task, "lps_task", configMINIMAL_STACK_SIZE, (void*)1,
-			  /*priority*/ (UBaseType_t) 7, &lps_task_handle);
-	  status = xTaskCreate(hts_task, "hts_task", configMINIMAL_STACK_SIZE, (void*)1,
-			  /*priority*/ (UBaseType_t) 7, &hts_task_handle);
-	  status = xTaskCreate(lsm_task, "lsm_task", configMINIMAL_STACK_SIZE, (void*)1,
-			  /*priority*/ (UBaseType_t) 7, &lsm_task_handle);
-	}
+	  status = xTaskCreate(lis_task, "lis_task", 512, (void*)1,
+			  /*priority*/ (UBaseType_t) 5, &lis_task_handle);
+	  status = xTaskCreate(uart1_task, "uart_task", 512, (void*)1,
+			  /*priority*/ (UBaseType_t) 5, &uart1_task_handle);
+	  status = xTaskCreate(lps_task, "lps_task", 512, (void*)1,
+			  /*priority*/ (UBaseType_t) 5, &lps_task_handle);
+	  status = xTaskCreate(hts_task, "hts_task", 512, (void*)1,
+			  /*priority*/ (UBaseType_t) 5, &hts_task_handle);
+	  status = xTaskCreate(lsm_task, "lsm_task", 512, (void*)1,
+			  /*priority*/ (UBaseType_t) 5, &lsm_task_handle);
+//	}
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
 
@@ -171,7 +183,7 @@ void StartDefaultTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(10000);
+    osDelay(1);
   }
   /* USER CODE END StartDefaultTask */
 }
