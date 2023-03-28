@@ -13,6 +13,7 @@
 #include "stdio.h"
 #include "hts_task.h"
 
+hts_data_t temphum_data;
 void hts_init(){
 
 }

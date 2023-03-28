@@ -20,6 +20,7 @@
 #include "main.h"
 #include "cmsis_os.h"
 #include "dma.h"
+#include "tim.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -91,7 +92,20 @@ int main(void)
   MX_GPIO_Init();
   MX_DMA_Init();
   MX_USART1_UART_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
+  htim3.Instance->ARR = 100;
+  htim3.Instance->CCR3 = 5;
+  __HAL_TIM_SET_PRESCALER(&htim3, 400);
+  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
+  HAL_Delay(1000);
+  uint16_t presc = 400;
+  while (presc > 0){
+	  presc--;
+  __HAL_TIM_SET_PRESCALER(&htim3, presc);
+  HAL_Delay(100);
+  }
+
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */

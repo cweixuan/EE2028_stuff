@@ -11,6 +11,10 @@
 #include "stm32l475e_iot01_psensor.h"
 #include "stdio.h"
 #include "lps_task.h"
+
+
+lps_data_t pressure_data;
+
 void lps_init(){
 
 }

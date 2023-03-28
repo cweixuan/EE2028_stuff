@@ -11,7 +11,7 @@
 #include "../../tasks/inc/lis_task.h"
 
 
-
+axis_data_t mag_data;
 void lis_init(){
 
 }

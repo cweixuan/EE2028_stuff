@@ -10,16 +10,13 @@
 #include "stm32l475e_iot01_gyro.h"
 #include "lsm_task.h"
 
-void lsm_init(){
+axis_data_t accel_data;
+axis_data_t gyro_data;
 
-}
-
-void lsm_loop(){
-
-}
 
 void lsm_task(void* argument){
 	BSP_ACCELERO_Init();
+	BSP_GYRO_Init();
 
 	char tx_buffer[256];
 	int tx_len;
@@ -39,7 +36,7 @@ void lsm_task(void* argument){
 		accelero_send.char_len = tx_len;
 		accelero_send.type = TX;
 		queue_UART_msg_t *accelero_pter = &accelero_send;
-		xQueueSendToBack(UART1_queue,&accelero_pter,0);
+//		xQueueSendToBack(UART1_queue,&accelero_pter,0);
 		vTaskDelayUntil(&last_wake_time, 100);
 	}
 }

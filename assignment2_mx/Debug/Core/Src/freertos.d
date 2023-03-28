@@ -46,7 +46,7 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
- ../Core/Inc/rtos_incs.h ../Core/Inc/main.h ../Core/tasks/inc/typedefs.h \
+ ../Core/tasks/inc/rtos_incs.h ../Core/tasks/inc/typedefs.h \
  ../Core/tasks/inc/lis_task.h ../Core/tasks/inc/lps_task.h \
  ../Core/tasks/inc/lsm_task.h ../Core/tasks/inc/hts_task.h \
  ../Core/tasks/inc/uart1_task.h
@@ -98,8 +98,7 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
 ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
-../Core/Inc/rtos_incs.h:
-../Core/Inc/main.h:
+../Core/tasks/inc/rtos_incs.h:
 ../Core/tasks/inc/typedefs.h:
 ../Core/tasks/inc/lis_task.h:
 ../Core/tasks/inc/lps_task.h:
