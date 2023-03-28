@@ -11,6 +11,7 @@
 "./Core/Src/tim.o"
 "./Core/Src/usart.o"
 "./Core/Startup/startup_stm32l475vgtx.o"
+"./Core/tasks/src/buzzer_task.o"
 "./Core/tasks/src/hts_task.o"
 "./Core/tasks/src/lis_task.o"
 "./Core/tasks/src/lps_task.o"

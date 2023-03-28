@@ -23,9 +23,11 @@ void hts_loop(){
 }
 
 void hts_task(void* pvParameters){
-	hts_init();
+	BSP_TSENSOR_Init();
+	BSP_HSENSOR_Init();
 	vTaskDelay(5);
 	while(1){
+
 		hts_loop();
 		vTaskDelay(5);
 	}

@@ -31,6 +31,7 @@
 #include "lsm_task.h"
 #include "hts_task.h"
 #include "uart1_task.h"
+#include "buzzer_task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -56,6 +57,7 @@ TaskHandle_t lis_task_handle;
 TaskHandle_t lps_task_handle;
 TaskHandle_t lsm_task_handle;
 TaskHandle_t hts_task_handle;
+TaskHandle_t buzzer_task_handle;
 
 QueueHandle_t UART1_queue;
 
@@ -164,6 +166,8 @@ void MX_FREERTOS_Init(void) {
 			  /*priority*/ (UBaseType_t) 5, &hts_task_handle);
 	  status = xTaskCreate(lsm_task, "lsm_task", 512, (void*)1,
 			  /*priority*/ (UBaseType_t) 5, &lsm_task_handle);
+	  status = xTaskCreate(buzzer_task, "buzzer_task", 512, (void*)1,
+			  /*priority*/ (UBaseType_t) 5, &buzzer_task_handle);
 //	}
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */

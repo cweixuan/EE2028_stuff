@@ -49,7 +49,7 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
  ../Core/tasks/inc/rtos_incs.h ../Core/tasks/inc/typedefs.h \
  ../Core/tasks/inc/lis_task.h ../Core/tasks/inc/lps_task.h \
  ../Core/tasks/inc/lsm_task.h ../Core/tasks/inc/hts_task.h \
- ../Core/tasks/inc/uart1_task.h
+ ../Core/tasks/inc/uart1_task.h ../Core/tasks/inc/buzzer_task.h
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
@@ -105,3 +105,4 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
 ../Core/tasks/inc/lsm_task.h:
 ../Core/tasks/inc/hts_task.h:
 ../Core/tasks/inc/uart1_task.h:
+../Core/tasks/inc/buzzer_task.h:
