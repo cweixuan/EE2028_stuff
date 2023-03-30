@@ -28,11 +28,7 @@ void lsm_task(void* argument){
 	//INSERT INIT CODE HERE
 	xSemaphoreGive(iic2Mutex);
 	vTaskDelay(5);
-
-	char tx_buffer[256];
-	int tx_len;
 	int16_t accel_data_i16[3] = { 0 };
-	float accel_data[3] = {0.5, 0.5, 0.5};			// array to store the x, y and z readings.
 	while(1){
 		xSemaphoreTake(iic2Mutex,0xFFFF);
 		last_wake_time = xTaskGetTickCount();
@@ -42,9 +38,9 @@ void lsm_task(void* argument){
 		xSemaphoreGive(iic2Mutex);
 
 
-		accel_data[0] = (float)accel_data_i16[0] * (9.8/1000.0f);
-		accel_data[1] = (float)accel_data_i16[1] * (9.8/1000.0f);
-		accel_data[2] = (float)accel_data_i16[2] * (9.8/1000.0f);
+		accel_data.x = (float)accel_data_i16[0] * (9.8/1000.0f);
+//		accel_data[1] = (float)accel_data_i16[1] * (9.8/1000.0f);
+//		accel_data[2] = (float)accel_data_i16[2] * (9.8/1000.0f);
 		vTaskDelayUntil(&last_wake_time, 50);
 	}
 }

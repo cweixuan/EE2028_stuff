@@ -34,12 +34,12 @@ void hts_task(void* pvParameters){
 		xSemaphoreTake(iic2Mutex,0xFFFF);
 		last_wake_time = xTaskGetTickCount();
 		//INSERT BSP READ HERE
-		float temp = BSP_TSENSOR_ReadTemp();
-		float humidity = BSP_HSENSOR_ReadHumidity();
+//		float temp = BSP_TSENSOR_ReadTemp();
+//		float humidity = BSP_HSENSOR_ReadHumidity();
 		xSemaphoreGive(iic2Mutex);
 
-		temphum_data.temperature = temp;
-		temphum_data.humidity = humidity;
+//		temphum_data.temperature = temp;
+//		temphum_data.humidity = humidity;
 
 		vTaskDelayUntil(&last_wake_time, 50);
 	}

@@ -8,7 +8,7 @@
 #include "rtos_incs.h"
 #include "warship_task.h"
 
-warship_state_e warship_state;
+warship_state_e warship_state = 0;
 
 void warship_task(void* parameter){
 	//init
@@ -22,6 +22,8 @@ void warship_task(void* parameter){
 		case BATTLE:
 			break;
 		}
+
+		vTaskDelay(10);
 	}
 }
 

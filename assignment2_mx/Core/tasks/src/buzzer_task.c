@@ -24,7 +24,7 @@ void buzzer_task(void* pvParameters){
 
 	  while (presc > 0){
 		  presc += dir;
-	  __HAL_TIM_SET_PRESCALER(&htim3, presc);
+		  __HAL_TIM_SET_PRESCALER(&htim3, presc);
 	  	  vTaskDelay(5);
 		  if (presc < 42 || presc > 200 ){
 			  dir = -dir;
