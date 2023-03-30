@@ -19,6 +19,9 @@ extern TaskHandle_t lps_task_handle;
 extern TaskHandle_t lsm_task_handle;
 extern TaskHandle_t hts_task_handle;
 
+
+extern SemaphoreHandle_t iic2Mutex;
+
 //extern axis_data_t mag_data;
 //extern axis_data_t accel_data;
 //extern axis_data_t gyro_data;
@@ -40,6 +43,14 @@ typedef struct{
 	float temperature;
 	float humidity;
 }hts_data_t;
+
+
+typedef enum {
+	SENTRY=0,
+	WARNING=1,
+	BATTLE=2
+}warship_state_e;
+
 
 
 #endif /* INC_RTOS_INCS_H_ */

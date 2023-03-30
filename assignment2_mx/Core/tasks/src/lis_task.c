@@ -21,11 +21,19 @@ void lis_loop(){
 }
 
 void lis_task(void* pvParameters){
+ 	TickType_t last_wake_time;
+	xSemaphoreTake(iic2Mutex,0xFFFF);
+	lis_init();
+	xSemaphoreGive(iic2Mutex);
 	vTaskDelay(5);
-	uint8_t toggle = 0;
 	while(1){
-		vTaskDelay(5);
-		toggle = !toggle;
+		xSemaphoreTake(iic2Mutex,0xFFFF);
+		last_wake_time = xTaskGetTickCount();
+		//get data from the magnetometer here
+		xSemaphoreGive(iic2Mutex);
+
+
+		vTaskDelayUntil(&last_wake_time, 50);
 	}
 }
 

@@ -17,6 +17,7 @@
 "./Core/tasks/src/lps_task.o"
 "./Core/tasks/src/lsm_task.o"
 "./Core/tasks/src/uart1_task.o"
+"./Core/tasks/src/warship_task.o"
 "./Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01.o"
 "./Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_accelero.o"
 "./Drivers/BSP/B-L475E-IOT01/stm32l475e_iot01_gyro.o"

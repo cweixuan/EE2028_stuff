@@ -24,10 +24,19 @@ void lps_loop(){
 }
 
 void lps_task(void* argument){
+ 	TickType_t last_wake_time;
+	xSemaphoreTake(iic2Mutex,0xFFFF);
+	//INSERT INIT CODE HERE
 	lps_init();
+	xSemaphoreGive(iic2Mutex);
 	vTaskDelay(5);
 	while(1){
-		lps_loop();
-		vTaskDelay(5);
+		xSemaphoreTake(iic2Mutex,0xFFFF);
+		last_wake_time = xTaskGetTickCount();
+		//get data from LPS
+		xSemaphoreGive(iic2Mutex);
+
+
+		vTaskDelayUntil(&last_wake_time, 50);
 	}
 }

@@ -23,13 +23,25 @@ void hts_loop(){
 }
 
 void hts_task(void* pvParameters){
-	BSP_TSENSOR_Init();
-	BSP_HSENSOR_Init();
+	//block until ready
+ 	TickType_t last_wake_time;
+	xSemaphoreTake(iic2Mutex,0xFFFF);
+	//INSERT INIT CODE HERE
+	xSemaphoreGive(iic2Mutex);
 	vTaskDelay(5);
 	while(1){
 
-		hts_loop();
-		vTaskDelay(5);
+		xSemaphoreTake(iic2Mutex,0xFFFF);
+		last_wake_time = xTaskGetTickCount();
+		//INSERT BSP READ HERE
+		float temp = BSP_TSENSOR_ReadTemp();
+		float humidity = BSP_HSENSOR_ReadHumidity();
+		xSemaphoreGive(iic2Mutex);
+
+		temphum_data.temperature = temp;
+		temphum_data.humidity = humidity;
+
+		vTaskDelayUntil(&last_wake_time, 50);
 	}
 }
 
