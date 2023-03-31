@@ -46,9 +46,9 @@ typedef struct{
 
 
 typedef enum {
-	SENTRY=0,
-	WARNING=1,
-	BATTLE=2
+	RESCUE=0,
+	BATTLE=1,
+	BATTLE_WARNING=2
 }warship_state_e;
 
 

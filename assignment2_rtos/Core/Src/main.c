@@ -46,9 +46,6 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
-
-}
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
