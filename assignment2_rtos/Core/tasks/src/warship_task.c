@@ -6,12 +6,16 @@
  */
 
 #include "rtos_incs.h"
+#include "tim.h"
+#include "gpio.h"
 #include "warship_task.h"
 
 volatile warship_state_e g_warship_state = 0;
-volatile uint8_t charging_field = 0;
-volatile time_t pbTick = 0;
-volatile time_t battleTick = 0;
+
+//global vars only for this file
+volatile static time_t pbTick = 0;
+volatile static time_t battleTick = 0;
+volatile static uint8_t energy = 0;
 
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
@@ -40,9 +44,9 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 					//double press still considered under battle mode
 					g_warship_state = RESCUE;
 				} else {
-					if (HAL_GetTick() - pbTick < 500){
+					if (HAL_GetTick() - pbTick > 500){
 					//single press in battle warning mode
-					charging_field = 1;
+					energy = (energy <= 10) ? energy+2 : 10;
 					}
 				}
 				break;
@@ -59,19 +63,57 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 }
 
 void warship_task(void* parameter){
+	//green light, which isn't as fun :(
+	//led set to solid
+	htim15.Instance->CCR1 = 000;
+	HAL_TIM_PWM_Start(&htim15, TIM_CHANNEL_1);
+	//orange and blue light
+	//default state is rescue, which has solid lights
+	htim8.Instance->CCR4 = 10000;
+	HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_4);
 	//init
 	while(1){
 		//loop
+		htim15.Instance->CCR1 = energy * energy * energy;
 		switch(g_warship_state){
 			case RESCUE:
+				//solid leds
+				htim8.Instance->CCR4 = 10000;
+				__HAL_TIM_SET_PRESCALER(&htim8, 1599);
 				break;
 
 
 			case BATTLE:
+				//blink at 1hz
+				htim8.Instance->CCR4 = 4999;
+				__HAL_TIM_SET_PRESCALER(&htim8, 1599);
 				break;
 
 
 			case BATTLE_WARNING:
+				//blink at 3hz
+				htim8.Instance->CCR4 = 4999;
+				__HAL_TIM_SET_PRESCALER(&htim8, 532);
+
+				if (uwTick - battleTick > 5000){
+					//more than 5 seconds has passed
+					if (energy >= 3){
+						energy -=3;
+						g_warship_state = BATTLE;
+					} else {
+						//gg no re
+						g_warship_state = DEAD;
+					}
+				}
+				break;
+			case DEAD:
+				//blink at 0
+				HAL_GPIO_DeInit(GPIOC, GPIO_PIN_9);
+				HAL_GPIO_DeInit(GPIOB, GPIO_PIN_14);
+				//insert an event flag here that only triggers when
+				//everything else has shutdown lol
+//				int* hardfaultme_pls;
+//				*hardfaultme_pls = "hahah";
 				break;
 
 			default:

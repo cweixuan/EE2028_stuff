@@ -32,6 +32,7 @@
 #include "hts_task.h"
 #include "uart1_task.h"
 #include "buzzer_task.h"
+#include "warship_task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -57,11 +58,13 @@ TaskHandle_t lis_task_handle;
 TaskHandle_t lps_task_handle;
 TaskHandle_t lsm_task_handle;
 TaskHandle_t hts_task_handle;
+TaskHandle_t warship_task_handle;
 TaskHandle_t buzzer_task_handle;
 
 QueueHandle_t UART1_queue;
 
 SemaphoreHandle_t iic2Mutex;
+EventGroupHandle_t changeStateFlag;
 
 /* USER CODE END Variables */
 osThreadId defaultTaskHandle;
@@ -154,22 +157,24 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_THREADS */
 
 	iic2Mutex = xSemaphoreCreateMutex();
-	BaseType_t status = 0;
+	changeStateFlag = xEventGroupCreate();
 	if (iic2Mutex != NULL) {
 		//error somehow? lol
-		status = xTaskCreate(lis_task, "lis_task", 512, (void*) 1,
+		xTaskCreate(lis_task, "lis_task", 512, (void*) 1,
 		/*priority*/(UBaseType_t) 5, &lis_task_handle);
-		status = xTaskCreate(lps_task, "lps_task", 512, (void*) 1,
+		xTaskCreate(lps_task, "lps_task", 512, (void*) 1,
 		/*priority*/(UBaseType_t) 5, &lps_task_handle);
-		status = xTaskCreate(hts_task, "hts_task", 512, (void*) 1,
+		xTaskCreate(hts_task, "hts_task", 512, (void*) 1,
 		/*priority*/(UBaseType_t) 5, &hts_task_handle);
-		status = xTaskCreate(lsm_task, "lsm_task", 512, (void*) 1,
+		xTaskCreate(lsm_task, "lsm_task", 512, (void*) 1,
 		/*priority*/(UBaseType_t) 5, &lsm_task_handle);
 	}
-	status = xTaskCreate(buzzer_task, "buzzer_task", 512, (void*) 1,
+	xTaskCreate(buzzer_task, "buzzer_task", 512, (void*) 1,
 	/*priority*/(UBaseType_t) 5, &buzzer_task_handle);
-	status = xTaskCreate(uart1_task, "uart_task", 512, (void*) 1,
+	xTaskCreate(uart1_task, "uart_task", 512, (void*) 1,
 	/*priority*/(UBaseType_t) 5, &uart1_task_handle);
+	xTaskCreate(warship_task, "warship_task", 512, (void*) 1,
+	/*priority*/(UBaseType_t) 5, &warship_task_handle);
 	/* add threads, ... */
   /* USER CODE END RTOS_THREADS */
 

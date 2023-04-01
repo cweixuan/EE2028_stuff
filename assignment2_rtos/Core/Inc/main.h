@@ -56,6 +56,20 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define PUSHBUTTON_Pin GPIO_PIN_13
+#define PUSHBUTTON_GPIO_Port GPIOC
+#define PUSHBUTTON_EXTI_IRQn EXTI15_10_IRQn
+#define PRES_DRDY_Pin GPIO_PIN_10
+#define PRES_DRDY_GPIO_Port GPIOD
+#define PRES_DRDY_EXTI_IRQn EXTI15_10_IRQn
+#define LSM_DRDY_Pin GPIO_PIN_11
+#define LSM_DRDY_GPIO_Port GPIOD
+#define LSM_DRDY_EXTI_IRQn EXTI15_10_IRQn
+#define HTS_DRDY_Pin GPIO_PIN_15
+#define HTS_DRDY_GPIO_Port GPIOD
+#define HTS_DRDY_EXTI_IRQn EXTI15_10_IRQn
+#define MAG_DRDY_Pin GPIO_PIN_8
+#define MAG_DRDY_GPIO_Port GPIOC
 
 /* USER CODE BEGIN Private defines */
 

@@ -9,5 +9,6 @@
 #define TASKS_INC_WARSHIP_TASK_H_
 
 
+void warship_task(void* parameter);
 
 #endif /* TASKS_INC_WARSHIP_TASK_H_ */

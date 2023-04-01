@@ -40,11 +40,17 @@ void lsm_task(void* argument){
 		g_accel_data.x = (float)accel_data_i16[0] * (9.8/1000.0f);
 		g_accel_data.y = (float)accel_data_i16[1] * (9.8/1000.0f);
 		g_accel_data.z = (float)accel_data_i16[2] * (9.8/1000.0f);
+		g_accel_data.mag = sqrtf((g_accel_data.x*g_accel_data.x +
+								g_accel_data.y * g_accel_data.y +
+								g_accel_data.z * g_accel_data.z));
 
 		// converting to float to obtain the actual angular velocity
 		g_gyro_data.x = (float)gyro_data_f32[0] * (1/1000.0f);
 		g_gyro_data.y = (float)gyro_data_f32[1] * (1/1000.0f);
 		g_gyro_data.z = (float)gyro_data_f32[2] * (1/1000.0f);
+		g_gyro_data.mag = sqrtf((g_gyro_data.x * g_gyro_data.x +
+								 g_gyro_data.y * g_gyro_data.y +
+								 g_gyro_data.z * g_gyro_data.z));
 
 		vTaskDelayUntil(&last_wake_time, 50);
 	}

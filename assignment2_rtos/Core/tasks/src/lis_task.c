@@ -8,6 +8,7 @@
 #include "rtos_incs.h"
 #include "stm32l475e_iot01_magneto.h"
 #include "stdio.h"
+#include "arm_fp16.h"
 #include "lis_task.h"
 
 
@@ -15,10 +16,6 @@ axis_data_t g_mag_data;
 
 void lis_init(){
 	BSP_MAGNETO_Init();
-}
-
-void lis_loop(){
-
 }
 
 void lis_task(void* pvParameters){
@@ -39,6 +36,9 @@ void lis_task(void* pvParameters){
 		g_mag_data.x = (float)mag_data_i16[0] * (1/1000.0f);
 		g_mag_data.y = (float)mag_data_i16[1] * (1/1000.0f);
 		g_mag_data.z = (float)mag_data_i16[2] * (1/1000.0f);
+		g_mag_data.mag = sqrtf((g_mag_data.x*g_mag_data.x +
+								g_mag_data.y * g_mag_data.y +
+								g_mag_data.z * g_mag_data.z));
 
 		vTaskDelayUntil(&last_wake_time, 50);
 	}
