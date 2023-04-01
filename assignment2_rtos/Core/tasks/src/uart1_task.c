@@ -73,6 +73,7 @@ void uart1_task(void* pvParameters){
 	uint8_t tx_len;
  	TickType_t delay_time = 10;
  	TickType_t start_time;
+	warship_state_e prev_state = DEAD;
 	while(1){
 		start_time = xTaskGetTickCount();
 		tx_len = 1;
@@ -84,6 +85,9 @@ void uart1_task(void* pvParameters){
 		uint8_t over_flag = 0;
 		switch(g_warship_state){
 			case RESCUE:
+				if (prev_state == DEAD){
+					tx_len += snprintf(tx_buffer+tx_len, 256, "Entering SENTRY mode\r\n");
+				}
 				over_flag = check_over();
 				if (over_flag > 0){
 					if ((over_flag & (1<<GYRO_OFFSET)) > 0 ){
@@ -117,10 +121,14 @@ void uart1_task(void* pvParameters){
 					tx_len += snprintf(tx_buffer+tx_len, 256, 	"Mode:%d \r\n",
 										g_warship_state);
 				}
+				prev_state = RESCUE;
 				delay_time = 1000;
 				break;
 
 			case BATTLE:
+				if (prev_state == RESCUE){
+					tx_len += snprintf(tx_buffer+tx_len, 256, "Entering BATTLE mode\r\n");
+				}
 				over_flag = check_over();
 				if (over_flag > 0){
 					if ((over_flag & (1<<TEMP_OFFSET)) >0 ){
@@ -167,14 +175,21 @@ void uart1_task(void* pvParameters){
 										g_warship_state);
 				}
 
+				prev_state = BATTLE;
 				delay_time = 1000;
 				break;
 			case BATTLE_WARNING:
-				tx_len = snprintf(tx_buffer, 256, "WARNING!\r\n");
+				if (prev_state == BATTLE){
+					tx_len += snprintf(tx_buffer+tx_len, 256, "WARNING!\r\n");
+				} else {
+					tx_len = snprintf(tx_buffer,256,"WARNING!\r\n");
+				}
+				prev_state = BATTLE_WARNING;
 				delay_time = 1000;
 				break;
 			default:
-				tx_len = snprintf(tx_buffer,256, "It's been an honour o7\r\n");
+				tx_len += snprintf(tx_buffer+tx_len,256, "It's been an honour o7\r\n");
+				prev_state = RESCUE;
 				delay_time = 0xFFFFFFFF;
 				break;
 
