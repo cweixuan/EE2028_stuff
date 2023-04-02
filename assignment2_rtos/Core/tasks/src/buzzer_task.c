@@ -21,14 +21,14 @@ void buzzer_task(void* pvParameters){
 	  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
 	  uint16_t presc = 400;
 	  int dir = 1;
-
-
-	  while (presc > 0){
-		  presc += dir;
-		  __HAL_TIM_SET_PRESCALER(&htim3, presc);
-	  	  vTaskDelay(100);
-		  if (presc < 100 || presc > 400 ){
-			  dir = -dir;
+	  while (1){
+		  while (presc > 0){
+			  presc += dir;
+			  __HAL_TIM_SET_PRESCALER(&htim3, presc);
+			  vTaskDelay(100);
+			  if (presc < 100 || presc > 400 ){
+				  dir = -dir;
+			  }
 		  }
 	  }
 

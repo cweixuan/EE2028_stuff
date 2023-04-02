@@ -93,7 +93,7 @@ void HTS221_H_Init(uint16_t DeviceAddr)
   
   /* Set default ODR */
   tmp &= ~HTS221_ODR_MASK;
-  tmp |= (uint8_t)0x02; /* Set ODR to 1Hz */
+  tmp |= (uint8_t)0x01; /* Set ODR to 1Hz */
   
   /* Activate the device */
   tmp |= HTS221_PD_MASK;

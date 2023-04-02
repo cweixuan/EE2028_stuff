@@ -174,7 +174,7 @@ void MX_FREERTOS_Init(void) {
 	xTaskCreate(uart1_task, "uart_task", 512, (void*) 1,
 	/*priority*/(UBaseType_t) 5, &uart1_task_handle);
 	xTaskCreate(warship_task, "warship_task", 512, (void*) 1,
-	/*priority*/(UBaseType_t) 5, &warship_task_handle);
+	/*priority*/(UBaseType_t) 4, &warship_task_handle);
 	/* add threads, ... */
   /* USER CODE END RTOS_THREADS */
 

@@ -11,8 +11,10 @@
 #include "main.h"
 #include "stdio.h"
 #include "cmsis_os.h"
+#include "FreeRTOS.h"
 #include "string.h"
 #include "typedefs.h"
+#include "math.h"
 extern TaskHandle_t uart1_task_handle;
 extern TaskHandle_t lis_task_handle;
 extern TaskHandle_t lps_task_handle;
@@ -25,10 +27,11 @@ extern SemaphoreHandle_t iic2Mutex;
 extern EventGroupHandle_t changeStateFlag;
 
 //function prototypes for interrupts from the drdy pins of the sensors
-void hts_notif();
-void lps_notif();
-void lsm_notif();
-void lis_notif();
+void hts_notify_from_isr();
+void lps_notify_from_isr();
+void lsm_notify_from_isr();
+void lis_notify_from_isr();
+void uart_notify_from_isr();
 
 
 //struct for axis data, z points down, x is facing USB connector
