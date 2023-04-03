@@ -105,9 +105,9 @@ void buzzer_task(void* pvParameters){
 		  case BATTLE_WARNING:
 			  alarm *= dir;
 			  buzzer_set_freq(alarm,volume);
-			  if (alarm < 440)
+			  if (alarm < NOTE_A4)
 				  dir = ALARM_SPEED
-			  else if (alarm > 1600 ){
+			  else if (alarm > NOTE_A6 ){
 				  dir = 1/ALARM_SPEED;
 			  }
 		  break;

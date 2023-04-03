@@ -18,10 +18,11 @@ volatile uint8_t enable_extras = 0;
 //global vars only for this file
 volatile static time_t pbTick = 0;
 volatile static time_t battleTick = 0;
+volatile static time_t energyTick = 0;
 volatile static uint8_t energy = 1;
 
 void pb_func(){		//check debouncing
-	if (HAL_GetTick()- pbTick > 10){
+	if (HAL_GetTick()- pbTick > 50){
 		//button press is a different press;
 		switch(g_warship_state){
 		case RESCUE:
@@ -51,7 +52,8 @@ void pb_func(){		//check debouncing
 				uart_notify_from_isr();
 				g_warship_state = RESCUE;
 			} else {
-				if (HAL_GetTick() - pbTick > 500){
+				if (HAL_GetTick() - energyTick > 500){
+				energyTick = uwTick;
 				//single press in battle warning mode
 				energy += 2;
 				energy = (energy < 11) ? energy : 11;
@@ -110,8 +112,8 @@ void warship_task(void* parameter){
 		switch(g_warship_state){
 			case RESCUE:
 				//solid leds
-				htim8.Instance->CCR4 = 10000;
-				__HAL_TIM_SET_PRESCALER(&htim8, 1599);
+				htim8.Instance->CCR4 = 5000;
+				__HAL_TIM_SET_PRESCALER(&htim8, 32);
 				break;
 
 

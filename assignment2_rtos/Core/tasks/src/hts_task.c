@@ -15,6 +15,18 @@ hts_data_t g_temphum_data;
 extern warship_state_e g_warship_state;
 extern uint8_t enable_extras;
 
+//VALUES MUST BE RECALIBRATED FOR EVERY SENSOR IF FACTORY CALIBRATION
+//IS UNRELIABLE (like ours)
+//for wx's board:
+#define HUM_H1 (int16_t)78
+#define HUM_H1_OUT	(int16_t)32225
+#define HUM_H0 (int16_t)59
+#define HUM_H0_OUT (int16_t) 32443
+
+#define TEMP_T1 (float)29.9
+#define TEMP_T0 (float)28.5
+#define TEMP_T1_OUT (int16_t)674
+#define TEMP_T0_OUT (int16_t)545
 void hts_notif(){
 
 }
@@ -30,6 +42,8 @@ void hts_init(){
 	  tmp |= (1 << HTS221_DRDY_BIT);
 	  SENSOR_IO_Write(HTS221_I2C_ADDRESS, HTS221_CTRL_REG3, tmp);
 
+
+
 }
 
 //function to notify the task from the EXTI interrupt
@@ -41,18 +55,7 @@ void hts_notify_from_isr(){
 }
 
 
-//VALUES MUST BE RECALIBRATED FOR EVERY SENSOR IF FACTORY CALIBRATION
-//IS UNRELIABLE (like ours)
-//for wx's board:
-#define HUM_H1 (int16_t)78
-#define HUM_H1_OUT	(int16_t)32225
-#define HUM_H0 (int16_t)59
-#define HUM_H0_OUT (int16_t) 32443
 
-#define TEMP_T1 (float)29.9
-#define TEMP_T0 (float)28.5
-#define TEMP_T1_OUT (int16_t)674
-#define TEMP_T0_OUT (int16_t)545
 
 
 //with custom humidity values because the factory calibration is f'd
