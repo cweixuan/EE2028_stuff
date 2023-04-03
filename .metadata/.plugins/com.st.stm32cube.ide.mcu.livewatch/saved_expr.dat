@@ -1,0 +1,5 @@
+g_accel_data
+g_gyro_data
+g_mag_data
+g_pressure_data
+g_temphum_data

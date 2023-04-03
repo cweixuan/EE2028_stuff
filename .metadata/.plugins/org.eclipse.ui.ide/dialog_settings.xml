@@ -20,6 +20,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="D:\stuff\nus\EE2028\Labs\Assignment2_14_A0238957J_A0214459B_Workspace"/>
+			<item value="D:\stuff\nus\EE2028\Labs\Assignment2_14_A0238957J_A0214459B_Workspace\assignment2_rtos"/>
 			<item value="C:\Users\cwx\Documents\Github\EE2028_stuff\Assignment2"/>
 			<item value="C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos"/>
 			<item value="C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_nortos"/>

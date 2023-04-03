@@ -2,7 +2,6 @@
  * buzzer_task.c
  *
  *  Created on: Mar 28, 2023
- *      Author: wx
  */
 #include "rtos_incs.h"
 #include "stm32l475xx.h"

@@ -34,6 +34,8 @@ extern uint8_t enable_extras;
 #define TEMP_THRESHOLD (float)35
 #define TEMP_OFFSET 5
 
+#define RESCUE_TFLAGS ((1 << GYRO_OFFSET) | (1 << HUMI_OFFSET) | (1 << PRES_OFFSET) | (1 << MAG_OFFSET))
+
 uint8_t check_over(){
 	uint8_t thresh_flag = 0;
 	if (g_gyro_data.mag >= GYRO_THRESHOLD){
@@ -89,7 +91,7 @@ void clear_screen(uint16_t* tx_len, char* tx_buffer, uint16_t max_len){
 	}
 }
 
-#define BUFFER_SIZE 256
+#define BUFFER_SIZE 512
 void uart1_task(void* pvParameters){
 	//init code
 	char tx_buffer[BUFFER_SIZE];
@@ -113,7 +115,7 @@ void uart1_task(void* pvParameters){
 					tx_len += snprintf(tx_buffer+tx_len, BUFFER_SIZE-tx_len, "Entering SENTRY mode\r\n");
 				}
 				over_flag = check_over();
-				if (over_flag > 0){
+				if ((over_flag & RESCUE_TFLAGS) > 0){
 					clear_screen(&tx_len, tx_buffer, BUFFER_SIZE);
 					if ((over_flag & (1<<GYRO_OFFSET)) > 0 ){
 						tx_len += snprintf(tx_buffer+tx_len, BUFFER_SIZE-tx_len,

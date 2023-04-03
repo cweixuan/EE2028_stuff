@@ -173,7 +173,7 @@ void MX_FREERTOS_Init(void) {
 	}
 	xTaskCreate(buzzer_task, "buzzer_task", 512, (void*) 1,
 	/*priority*/(UBaseType_t) 5, &buzzer_task_handle);
-	xTaskCreate(uart1_task, "uart_task", 512, (void*) 1,
+	xTaskCreate(uart1_task, "uart_task", 768, (void*) 1,
 	/*priority*/(UBaseType_t) 6, &uart1_task_handle);
 	xTaskCreate(warship_task, "warship_task", 512, (void*) 1,
 	/*priority*/(UBaseType_t) 4, &warship_task_handle);
