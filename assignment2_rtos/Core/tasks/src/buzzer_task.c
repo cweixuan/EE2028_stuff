@@ -53,9 +53,13 @@ const float note_length[] = { 8, 2, 2, 2, 2, 2, 3, 1, 10, 4, 2, 2, 2, 2, 2, 4, 2
 };
 
 
-void buzzer_set_freq(uint16_t freq){
-
+void buzzer_set_freq(uint16_t freq, uint8_t volume){
+	if (freq <= 3 ){
+		  htim3.Instance->CCR3 = 0;
+	} else {
 	  __HAL_TIM_SET_PRESCALER(&htim3, 160000/freq);
+		htim3.Instance->CCR3 = volume;
+	}
 }
 
 void buzzer_task(void* pvParameters){
@@ -63,7 +67,6 @@ void buzzer_task(void* pvParameters){
 	  htim3.Instance->ARR = 100;
 	  htim3.Instance->CCR3 = 0;
 	  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
-	  buzzer_set_freq(440);
 	  uint16_t alarm = 440;
 	  float dir = ALARM_SPEED;
 	  time_t last_beep = 0;
@@ -71,6 +74,7 @@ void buzzer_task(void* pvParameters){
 	  TickType_t last_wake_time;
 	  uint16_t note_time;
 	  uint8_t volume = 0;
+	  buzzer_set_freq(440,volume);
 	  while (1){
 		  if (enable_extras == 1){
 			  volume = BUZZER_VOLUME;
@@ -79,10 +83,9 @@ void buzzer_task(void* pvParameters){
 		  }
 		  switch (g_warship_state){
 		  case RESCUE:
-			  buzzer_set_freq(440);
 			  if (uwTick - last_beep > 5000){
+				  buzzer_set_freq(440,volume);
 				  last_beep = uwTick;
-				  htim3.Instance->CCR3 = volume;
 			  } else if (uwTick-last_beep > RESCUE_BEEP_DUR){
 				  htim3.Instance->CCR3 = 0;
 
@@ -90,8 +93,8 @@ void buzzer_task(void* pvParameters){
 			  break;
 		  case BATTLE:
 			  alarm = 440;
-			  buzzer_set_freq(880);
 			  if (uwTick - last_beep > 1000){
+				  buzzer_set_freq(880,volume);
 				  last_beep = uwTick;
 				  htim3.Instance->CCR3 = volume;
 			  } else if (uwTick-last_beep > BATTLE_BEEP_DUR){
@@ -100,9 +103,8 @@ void buzzer_task(void* pvParameters){
 			  }
 			  break;
 		  case BATTLE_WARNING:
-			  htim3.Instance->CCR3 = volume;
 			  alarm *= dir;
-			  buzzer_set_freq(alarm);
+			  buzzer_set_freq(alarm,volume);
 			  if (alarm < 440)
 				  dir = ALARM_SPEED
 			  else if (alarm > 1600 ){
@@ -115,8 +117,7 @@ void buzzer_task(void* pvParameters){
 			  htim3.Instance->CCR3 = volume;
 			  for (uint16_t i = 0; i < sizeof(melody) / sizeof(uint16_t); i++) {
 			  				last_wake_time = xTaskGetTickCount();
-			  				buzzer_set_freq(melody[i]);
-			  				htim3.Instance->CCR3 = volume;
+			  				buzzer_set_freq(melody[i],volume);
 			  				note_time = (semiquaver_time * note_length[i]);
 			  				vTaskDelayUntil(&last_wake_time, note_time * 0.97);
 			  				htim3.Instance->CCR3 = 0;

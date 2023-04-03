@@ -129,7 +129,7 @@ void warship_task(void* parameter){
 
 				if (HAL_GetTick() - battleTick >= 5000){
 					//more than 5 seconds has passed
-					if (energy >= 3){
+					if (energy >= 4){
 						energy -=3;
 						g_warship_state = BATTLE;
 						uart_notify();
@@ -144,15 +144,13 @@ void warship_task(void* parameter){
 				//blink at 0
 				HAL_GPIO_DeInit(GPIOC, GPIO_PIN_9);
 				if (enable_extras){
-					uint16_t explosion_led = energy*4;
-					htim15.Instance->ARR = 7999;
-					__HAL_TIM_SET_PRESCALER(&htim15,3);
-					while (explosion_led < 7999){
+					uint16_t explosion_led = energy * energy * energy;
+					while (explosion_led < 1330){
 						htim15.Instance->CCR1 = explosion_led;
-						explosion_led += 100;
+						explosion_led += 10;
 						vTaskDelay(10);
 					}
-					vTaskDelay(200);
+					vTaskDelay(500);
 					HAL_GPIO_DeInit(GPIOB, GPIO_PIN_14);
 				}
 				vTaskSuspend(warship_task_handle);

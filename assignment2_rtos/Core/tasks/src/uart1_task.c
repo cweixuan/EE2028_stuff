@@ -217,11 +217,18 @@ void uart1_task(void* pvParameters){
 				break;
 			case DEAD:
 				clear_screen(&tx_len, tx_buffer, BUFFER_SIZE);
-				tx_len += snprintf(tx_buffer+tx_len,BUFFER_SIZE-tx_len, "Sir, it's been an honour o7\r\n");
+				tx_len += snprintf(tx_buffer+tx_len,BUFFER_SIZE-tx_len,
+						"It's been an honour o7\r\n"
+						"LONG LIVE ZION!\r\n");
+				if (enable_extras){
+					tx_len += snprintf(tx_buffer+tx_len,BUFFER_SIZE-tx_len,
+							"I HOPE THE ENEMY LIKES THIS ONE LAST RICKROLL\r\n");
+				}
+				//blocking mode and max delay to ensure this sends out.
+				HAL_UART_Transmit_DMA(&huart1, (uint8_t*)tx_buffer,tx_len);
 				prev_state = DEAD;
 				delay_time = portMAX_DELAY;
 				//last o7
-				HAL_UART_Transmit_DMA(&huart1, (uint8_t*)tx_buffer,tx_len);
 				//stop this task
 				vTaskSuspend(uart1_task_handle);
 				break;
@@ -235,5 +242,6 @@ void uart1_task(void* pvParameters){
 
 
 		HAL_UART_Transmit_DMA(&huart1, (uint8_t*)tx_buffer,tx_len);
+		vTaskDelay(1);
 	}
 }
