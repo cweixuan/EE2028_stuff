@@ -45,8 +45,13 @@ void lis_task(void* pvParameters){
 	BSP_MAGNETO_GetXYZ(mag_data_i16);	        	// reading magnetometer
 	// this returns 16 bit integers of magnetic field in mGauss (1/1000 Gauss)
 	xSemaphoreGive(iic2Mutex);
+	last_wake_time = xTaskGetTickCount()-1000;
 	while(1){
-		ulTaskNotifyTake(pdTRUE, 2000);
+		if (enable_extras){
+			ulTaskNotifyTake(pdFALSE, 5000);
+		} else {
+			vTaskDelayUntil(&last_wake_time, 1000);
+		}
 		xSemaphoreTake(iic2Mutex,portMAX_DELAY);
 		last_wake_time = xTaskGetTickCount();
 		BSP_MAGNETO_GetXYZ(mag_data_i16);	        	// reading magnetometer

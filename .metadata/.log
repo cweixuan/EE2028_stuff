@@ -9863,3 +9863,10 @@ Error finishing flash operation
 java.lang.Exception: Error finishing flash operation
 	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
 	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.core.resources 4 77 2023-04-03 20:34:45.599
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-04-03 20:34:45.599
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-04-03 20:34:45.599
+!MESSAGE C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos overlaps the location of another project: 'assignment2_rtos'

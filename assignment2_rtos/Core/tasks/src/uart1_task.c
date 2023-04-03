@@ -74,14 +74,19 @@ void uart_notify_from_isr(){
     portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
 }
 
-void clear_screen(uint16_t* tx_len, char* tx_buffer, uint16_t max_len){
-	tx_buffer[*tx_len] = 27; //escape
-	*tx_len += 1;
-	*tx_len += snprintf(tx_buffer+*tx_len,max_len,"[2J");
-	tx_buffer[*tx_len] = 27; //escape
-	*tx_len += 1;
-	*tx_len += snprintf(tx_buffer+*tx_len,max_len,"[H");
+void uart_notify(){
+	xTaskNotifyGive(uart1_task_handle);
+}
 
+void clear_screen(uint16_t* tx_len, char* tx_buffer, uint16_t max_len){
+	if (enable_extras){
+		tx_buffer[*tx_len] = 27; //escape
+		*tx_len += 1;
+		*tx_len += snprintf(tx_buffer+*tx_len,max_len,"[2J");
+		tx_buffer[*tx_len] = 27; //escape
+		*tx_len += 1;
+		*tx_len += snprintf(tx_buffer+*tx_len,max_len,"[H");
+	}
 }
 
 #define BUFFER_SIZE 256
@@ -109,6 +114,7 @@ void uart1_task(void* pvParameters){
 				}
 				over_flag = check_over();
 				if (over_flag > 0){
+					clear_screen(&tx_len, tx_buffer, BUFFER_SIZE);
 					if ((over_flag & (1<<GYRO_OFFSET)) > 0 ){
 						tx_len += snprintf(tx_buffer+tx_len, BUFFER_SIZE-tx_len,
 								"Gyroscope magnitude currently %fdps, exceeding threshold of %fdps|\r\n",
@@ -131,6 +137,7 @@ void uart1_task(void* pvParameters){
 					}
 				}else
 				{
+					clear_screen(&tx_len, tx_buffer, BUFFER_SIZE);
 					tx_len += snprintf(tx_buffer+tx_len, BUFFER_SIZE-tx_len, 	"|GX: %.4fdps	|GY: %.4fdps 	|GZ: %.4fdps 	| \r\n",
 										g_gyro_data.x, g_gyro_data.y, g_gyro_data.z);
 					tx_len += snprintf(tx_buffer+tx_len, BUFFER_SIZE-tx_len,	"|MX: %.4fgauss	|MY: %.4fgauss 	|MZ: %.4fgauss 	| \r\n",
@@ -150,6 +157,7 @@ void uart1_task(void* pvParameters){
 				}
 				over_flag = check_over();
 				if (over_flag > 0){
+					clear_screen(&tx_len, tx_buffer, BUFFER_SIZE);
 					if ((over_flag & (1<<TEMP_OFFSET)) >0 ){
 						tx_len += snprintf(tx_buffer+tx_len, BUFFER_SIZE-tx_len,
 								"Temperature at %fC, exceeding threshold of %fC|\r\n",
@@ -182,6 +190,7 @@ void uart1_task(void* pvParameters){
 					}
 				}else
 				{
+					clear_screen(&tx_len, tx_buffer, BUFFER_SIZE);
 					tx_len += snprintf(tx_buffer+tx_len, BUFFER_SIZE-tx_len, 	"|GX: %.4fdps	|GY: %.4fdps 	|GZ: %.4fdps 	| \r\n",
 										g_gyro_data.x, g_gyro_data.y, g_gyro_data.z);
 					tx_len += snprintf(tx_buffer+tx_len, BUFFER_SIZE-tx_len,	"|AX: %.4fms^2 	|AY: %.4fms^2 	|AZ: %.4fms^2 	| \r\n",

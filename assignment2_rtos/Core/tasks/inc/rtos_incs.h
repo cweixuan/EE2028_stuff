@@ -33,6 +33,7 @@ void lps_notify_from_isr();
 void lsm_notify_from_isr();
 void lis_notify_from_isr();
 void uart_notify_from_isr();
+void uart_notify();
 
 
 //struct for axis data, z points down, x is facing USB connector

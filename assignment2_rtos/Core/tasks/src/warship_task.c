@@ -18,7 +18,7 @@ volatile uint8_t enable_extras = 0;
 //global vars only for this file
 volatile static time_t pbTick = 0;
 volatile static time_t battleTick = 0;
-volatile static uint8_t energy = 0;
+volatile static uint8_t energy = 1;
 
 void pb_func(){		//check debouncing
 	if (HAL_GetTick()- pbTick > 10){
@@ -29,6 +29,7 @@ void pb_func(){		//check debouncing
 			if (HAL_GetTick() - pbTick < 500){
 				uart_notify_from_isr();
 				g_warship_state = BATTLE;
+				//toggle it again so the it undos the toggle from the first press of this doublepress
 				enable_extras = 1-enable_extras;
 			} else {
 				enable_extras = 1-enable_extras;
@@ -53,7 +54,7 @@ void pb_func(){		//check debouncing
 				if (HAL_GetTick() - pbTick > 500){
 				//single press in battle warning mode
 				energy += 2;
-				energy = (energy < 10) ? energy : 10;
+				energy = (energy < 11) ? energy : 11;
 				}
 			}
 			break;
@@ -89,6 +90,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 
 void warship_task(void* parameter){
 	//green light, which isn't as fun :(
+	htim15.Instance->ARR = 1330; //11 * 11 * 11
 	htim15.Instance->CCR1 = 000;
 	HAL_TIM_PWM_Start(&htim15, TIM_CHANNEL_1);
 	//orange and blue light
@@ -100,6 +102,9 @@ void warship_task(void* parameter){
 		//loop
 		if (enable_extras){
 			htim15.Instance->CCR1 = energy * energy * energy;
+		} else {
+
+			htim15.Instance->CCR1 = 0;
 		}
 
 		switch(g_warship_state){
@@ -127,9 +132,11 @@ void warship_task(void* parameter){
 					if (energy >= 3){
 						energy -=3;
 						g_warship_state = BATTLE;
+						uart_notify();
 					} else {
 						//gg no re
 						g_warship_state = DEAD;
+						uart_notify();
 					}
 				}
 				break;

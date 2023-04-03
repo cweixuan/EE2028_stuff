@@ -40,15 +40,16 @@ void matrix_init() {
 
 
 void matrix_task(void *argument) {
-	TickType_t last_wake_time;
-	matrix_init();
-	uint8_t tmp[16];
-	tmp[0] = 0xFF;
-	tmp[1] = 0x99;
-	memset(tmp+2,0,14);
-	HAL_I2C_Mem_Write(&hi2c1, 0x70, 0x00, I2C_MEMADD_SIZE_8BIT, tmp, 16,0xFFFF);
+//	TickType_t last_wake_time;
+//	matrix_init();
+//	uint8_t tmp[16];
+//	tmp[0] = 0xFF;
+//	tmp[1] = 0x99;
+//	memset(tmp+2,0,14);
+//	HAL_I2C_Mem_Write(&hi2c1, 0x70, 0x00, I2C_MEMADD_SIZE_8BIT, tmp, 16,0xFFFF);
+	//DOESN'T WORK, matrix requires 5v logic
 	while (1) {
-		vTaskDelay(10);
+		vTaskDelay(100);
 	}
 }
 

@@ -16,7 +16,7 @@ extern uint8_t enable_extras;
 
 #define RESCUE_BEEP_DUR 100
 #define BATTLE_BEEP_DUR 100
-#define BUZZER_VOLUME 70
+#define BUZZER_VOLUME 90
 #define ALARM_SPEED 1.01;
 
 //Never gonna give you up~
@@ -79,6 +79,7 @@ void buzzer_task(void* pvParameters){
 		  }
 		  switch (g_warship_state){
 		  case RESCUE:
+			  buzzer_set_freq(440);
 			  if (uwTick - last_beep > 5000){
 				  last_beep = uwTick;
 				  htim3.Instance->CCR3 = volume;
@@ -88,6 +89,7 @@ void buzzer_task(void* pvParameters){
 			  }
 			  break;
 		  case BATTLE:
+			  alarm = 440;
 			  buzzer_set_freq(880);
 			  if (uwTick - last_beep > 1000){
 				  last_beep = uwTick;
@@ -114,9 +116,10 @@ void buzzer_task(void* pvParameters){
 			  for (uint16_t i = 0; i < sizeof(melody) / sizeof(uint16_t); i++) {
 			  				last_wake_time = xTaskGetTickCount();
 			  				buzzer_set_freq(melody[i]);
+			  				htim3.Instance->CCR3 = volume;
 			  				note_time = (semiquaver_time * note_length[i]);
 			  				vTaskDelayUntil(&last_wake_time, note_time * 0.97);
-			  				buzzer_set_freq(0);
+			  				htim3.Instance->CCR3 = 0;
 			  				vTaskDelayUntil(&last_wake_time, note_time * 0.03);
 
 			  			}

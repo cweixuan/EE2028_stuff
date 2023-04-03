@@ -102,9 +102,13 @@ void hts_task(void* pvParameters){
 	BSP_TSENSOR_ReadTemp();	    	// reading temperature sensor
 	read_humidity();    // reading humidity sensor
 	xSemaphoreGive(iic2Mutex);
-
+	last_wake_time = xTaskGetTickCount()-1000;
 	while(1){
-		ulTaskNotifyTake(pdTRUE, 2000);
+		if (enable_extras){
+			ulTaskNotifyTake(pdFALSE, 5000);
+		} else {
+			vTaskDelayUntil(&last_wake_time, 1000);
+		}
 		xSemaphoreTake(iic2Mutex,portMAX_DELAY);
 		last_wake_time = xTaskGetTickCount();
 		float temp = BSP_TSENSOR_ReadTemp();	    	// reading temperature sensor

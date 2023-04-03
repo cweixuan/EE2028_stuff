@@ -26,6 +26,13 @@ void lsm_init() {
 	tmp |= (0b11);
 	SENSOR_IO_Write(LSM6DSL_ACC_GYRO_I2C_ADDRESS_LOW, LSM6DSL_ACC_GYRO_INT1_CTRL, tmp);
 
+	tmp = SENSOR_IO_Read(LSM6DSL_ACC_GYRO_I2C_ADDRESS_LOW,
+			LSM6DSL_ACC_GYRO_DRDY_PULSE_CFG_G);
+
+	//set drdy to pulse
+	tmp |= (0b10000000);
+	SENSOR_IO_Write(LSM6DSL_ACC_GYRO_I2C_ADDRESS_LOW, LSM6DSL_ACC_GYRO_DRDY_PULSE_CFG_G, tmp);
+
 }
 
 void lsm_notify_from_isr() {
@@ -51,14 +58,19 @@ void lsm_task(void *argument) {
 	// this returns 16 bit integers of magnetic field in mdps (1/1000 dps)? it was written as mg
 	xSemaphoreGive(iic2Mutex);
 
-	while (1) {
-		ulTaskNotifyTake(pdTRUE, 2000);
+	last_wake_time = xTaskGetTickCount()-1000;
+	while(1){
+		if (enable_extras){
+			ulTaskNotifyTake(pdTRUE, 5000);
+		} else {
+			vTaskDelayUntil(&last_wake_time, 1000);
+		}
 		xSemaphoreTake(iic2Mutex, portMAX_DELAY);
 		last_wake_time = xTaskGetTickCount();
-		BSP_ACCELERO_AccGetXYZ(accel_data_i16);	    	// reading accelerometer
-		// this returns 16 bit integers of acceleration in mg (9.8/1000 m/s^2)
 		BSP_GYRO_GetXYZ(gyro_data_f32);			    	// reading gyroscope
 		// this returns 16 bit integers of magnetic field in mdps (1/1000 dps)? it was written as mg
+		BSP_ACCELERO_AccGetXYZ(accel_data_i16);	    	// reading accelerometer
+		// this returns 16 bit integers of acceleration in mg (9.8/1000 m/s^2)
 		xSemaphoreGive(iic2Mutex);
 
 		// converting to float to obtain the actual acceleration
