@@ -144,6 +144,7 @@ void warship_task(void* parameter){
 				break;
 			case DEAD:
 				//blink at 0
+				htim8.Instance->CCR4 = 0;
 				HAL_GPIO_DeInit(GPIOC, GPIO_PIN_9);
 				if (enable_extras){
 					uint16_t explosion_led = energy * energy * energy;
