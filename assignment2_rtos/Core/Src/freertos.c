@@ -33,6 +33,7 @@
 #include "uart1_task.h"
 #include "buzzer_task.h"
 #include "warship_task.h"
+#include "matrix_task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -60,6 +61,7 @@ TaskHandle_t lsm_task_handle;
 TaskHandle_t hts_task_handle;
 TaskHandle_t warship_task_handle;
 TaskHandle_t buzzer_task_handle;
+TaskHandle_t matrix_task_handle;
 
 QueueHandle_t UART1_queue;
 
@@ -175,6 +177,8 @@ void MX_FREERTOS_Init(void) {
 	/*priority*/(UBaseType_t) 5, &uart1_task_handle);
 	xTaskCreate(warship_task, "warship_task", 512, (void*) 1,
 	/*priority*/(UBaseType_t) 4, &warship_task_handle);
+	xTaskCreate(matrix_task, "matrix_task", 512, (void*) 1,
+	/*priority*/(UBaseType_t) 4, &matrix_task_handle);
 	/* add threads, ... */
   /* USER CODE END RTOS_THREADS */
 

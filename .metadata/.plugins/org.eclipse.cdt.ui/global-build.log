@@ -965,3 +965,825 @@ Finished building: default.size.stdout
  
 Finished building: assignment2_rtos.list
  
+04:58:00 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/hts_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/hts_task.d" -MT"Core/tasks/src/hts_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/hts_task.o"
+arm-none-eabi-gcc "../Core/tasks/src/lis_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/lis_task.d" -MT"Core/tasks/src/lis_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/lis_task.o"
+arm-none-eabi-gcc "../Core/tasks/src/lps_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/lps_task.d" -MT"Core/tasks/src/lps_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/lps_task.o"
+arm-none-eabi-gcc "../Core/tasks/src/lsm_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/lsm_task.d" -MT"Core/tasks/src/lsm_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/lsm_task.o"
+arm-none-eabi-gcc "../Core/tasks/src/uart1_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/uart1_task.d" -MT"Core/tasks/src/uart1_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/uart1_task.o"
+../Core/tasks/src/hts_task.c: In function 'hts_task':
+../Core/tasks/src/hts_task.c:94:14: warning: variable 'last_wake_time' set but not used [-Wunused-but-set-variable]
+   94 |   TickType_t last_wake_time;
+      |              ^~~~~~~~~~~~~~
+../Core/tasks/src/lis_task.c: In function 'lis_task':
+../Core/tasks/src/lis_task.c:49:7: error: expected expression before ')' token
+   49 |   if ()
+      |       ^
+../Core/tasks/src/lis_task.c:37:14: warning: variable 'last_wake_time' set but not used [-Wunused-but-set-variable]
+   37 |   TickType_t last_wake_time;
+      |              ^~~~~~~~~~~~~~
+../Core/tasks/src/lps_task.c: In function 'lps_notify_from_isr':
+../Core/tasks/src/lps_task.c:24:25: warning: passing argument 1 of 'vTaskNotifyGiveFromISR' from incompatible pointer type [-Wincompatible-pointer-types]
+   24 |  vTaskNotifyGiveFromISR(&lps_task_handle, xHigherPriorityTaskWoken);
+      |                         ^~~~~~~~~~~~~~~~
+      |                         |
+      |                         struct tskTaskControlBlock **
+In file included from ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h:57,
+                 from ../Core/tasks/inc/rtos_incs.h:13,
+                 from ../Core/tasks/src/lps_task.c:8:
+../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:2122:43: note: expected 'TaskHandle_t' {aka 'struct tskTaskControlBlock *'} but argument is of type 'struct tskTaskControlBlock **'
+ 2122 | void vTaskNotifyGiveFromISR( TaskHandle_t xTaskToNotify, BaseType_t *pxHigherPriorityTaskWoken ) PRIVILEGED_FUNCTION;
+      |                              ~~~~~~~~~~~~~^~~~~~~~~~~~~
+make: *** [Core/tasks/src/subdir.mk:37: Core/tasks/src/lis_task.o] Error 1
+../Core/tasks/src/lps_task.c:24:43: warning: passing argument 2 of 'vTaskNotifyGiveFromISR' makes pointer from integer without a cast [-Wint-conversion]
+   24 |  vTaskNotifyGiveFromISR(&lps_task_handle, xHigherPriorityTaskWoken);
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                                           |
+      |                                           BaseType_t {aka long int}
+In file included from ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h:57,
+                 from ../Core/tasks/inc/rtos_incs.h:13,
+                 from ../Core/tasks/src/lps_task.c:8:
+../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:2122:70: note: expected 'BaseType_t *' {aka 'long int *'} but argument is of type 'BaseType_t' {aka 'long int'}
+ 2122 | void vTaskNotifyGiveFromISR( TaskHandle_t xTaskToNotify, BaseType_t *pxHigherPriorityTaskWoken ) PRIVILEGED_FUNCTION;
+      |                                                          ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** Waiting for unfinished jobs....
+../Core/tasks/src/lps_task.c: In function 'lps_task':
+../Core/tasks/src/lps_task.c:29:14: warning: variable 'last_wake_time' set but not used [-Wunused-but-set-variable]
+   29 |   TickType_t last_wake_time;
+      |              ^~~~~~~~~~~~~~
+../Core/tasks/src/lsm_task.c: In function 'lsm_task':
+../Core/tasks/src/lsm_task.c:39:13: warning: variable 'last_wake_time' set but not used [-Wunused-but-set-variable]
+   39 |  TickType_t last_wake_time;
+      |             ^~~~~~~~~~~~~~
+"make -j20 all" terminated with exit code 2. Build might be incomplete.
+04:58:12 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/lis_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/lis_task.d" -MT"Core/tasks/src/lis_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/lis_task.o"
+../Core/tasks/src/lis_task.c: In function 'lis_task':
+../Core/tasks/src/lis_task.c:37:14: warning: variable 'last_wake_time' set but not used [-Wunused-but-set-variable]
+   37 |   TickType_t last_wake_time;
+      |              ^~~~~~~~~~~~~~
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  74864	    676	  50520	 126060	  1ec6c	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+17:09:33 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/buzzer_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/buzzer_task.d" -MT"Core/tasks/src/buzzer_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/buzzer_task.o"
+arm-none-eabi-gcc "../Core/tasks/src/hts_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/hts_task.d" -MT"Core/tasks/src/hts_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/hts_task.o"
+arm-none-eabi-gcc "../Core/tasks/src/lis_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/lis_task.d" -MT"Core/tasks/src/lis_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/lis_task.o"
+arm-none-eabi-gcc "../Core/tasks/src/lps_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/lps_task.d" -MT"Core/tasks/src/lps_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/lps_task.o"
+arm-none-eabi-gcc "../Core/tasks/src/lsm_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/lsm_task.d" -MT"Core/tasks/src/lsm_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/lsm_task.o"
+arm-none-eabi-gcc "../Core/tasks/src/matrix_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/matrix_task.d" -MT"Core/tasks/src/matrix_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/matrix_task.o"
+arm-none-eabi-gcc "../Core/tasks/src/uart1_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/uart1_task.d" -MT"Core/tasks/src/uart1_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/uart1_task.o"
+arm-none-eabi-gcc "../Core/tasks/src/warship_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/warship_task.d" -MT"Core/tasks/src/warship_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/warship_task.o"
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+../Core/tasks/src/matrix_task.c: In function 'matrix_init':
+../Core/tasks/src/matrix_task.c:26:10: warning: variable 'tmp' set but not used [-Wunused-but-set-variable]
+   26 |  uint8_t tmp[2];
+      |          ^~~
+../Core/tasks/src/matrix_task.c: In function 'matrix_task':
+../Core/tasks/src/matrix_task.c:39:13: warning: unused variable 'last_wake_time' [-Wunused-variable]
+   39 |  TickType_t last_wake_time;
+      |             ^~~~~~~~~~~~~~
+../Core/tasks/src/lps_task.c: In function 'lps_notify_from_isr':
+../Core/tasks/src/lps_task.c:24:25: warning: passing argument 1 of 'vTaskNotifyGiveFromISR' from incompatible pointer type [-Wincompatible-pointer-types]
+   24 |  vTaskNotifyGiveFromISR(&lps_task_handle, xHigherPriorityTaskWoken);
+      |                         ^~~~~~~~~~~~~~~~
+      |                         |
+      |                         struct tskTaskControlBlock **
+In file included from ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h:57,
+                 from ../Core/tasks/inc/rtos_incs.h:13,
+                 from ../Core/tasks/src/lps_task.c:8:
+../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:2122:43: note: expected 'TaskHandle_t' {aka 'struct tskTaskControlBlock *'} but argument is of type 'struct tskTaskControlBlock **'
+ 2122 | void vTaskNotifyGiveFromISR( TaskHandle_t xTaskToNotify, BaseType_t *pxHigherPriorityTaskWoken ) PRIVILEGED_FUNCTION;
+      |                              ~~~~~~~~~~~~~^~~~~~~~~~~~~
+../Core/tasks/src/lps_task.c:24:43: warning: passing argument 2 of 'vTaskNotifyGiveFromISR' makes pointer from integer without a cast [-Wint-conversion]
+   24 |  vTaskNotifyGiveFromISR(&lps_task_handle, xHigherPriorityTaskWoken);
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                                           |
+      |                                           BaseType_t {aka long int}
+In file included from ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h:57,
+                 from ../Core/tasks/inc/rtos_incs.h:13,
+                 from ../Core/tasks/src/lps_task.c:8:
+../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:2122:70: note: expected 'BaseType_t *' {aka 'long int *'} but argument is of type 'BaseType_t' {aka 'long int'}
+ 2122 | void vTaskNotifyGiveFromISR( TaskHandle_t xTaskToNotify, BaseType_t *pxHigherPriorityTaskWoken ) PRIVILEGED_FUNCTION;
+      |                                                          ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/tasks/src/lis_task.c: In function 'lis_task':
+../Core/tasks/src/lis_task.c:37:14: warning: variable 'last_wake_time' set but not used [-Wunused-but-set-variable]
+   37 |   TickType_t last_wake_time;
+      |              ^~~~~~~~~~~~~~
+../Core/tasks/src/lps_task.c: In function 'lps_task':
+../Core/tasks/src/lps_task.c:29:14: warning: variable 'last_wake_time' set but not used [-Wunused-but-set-variable]
+   29 |   TickType_t last_wake_time;
+      |              ^~~~~~~~~~~~~~
+../Core/tasks/src/hts_task.c: In function 'hts_task':
+../Core/tasks/src/lsm_task.c: In function 'lsm_task':
+../Core/tasks/src/hts_task.c:94:14: warning: variable 'last_wake_time' set but not used [-Wunused-but-set-variable]
+   94 |   TickType_t last_wake_time;
+      |              ^~~~~~~~~~~~~~
+../Core/tasks/src/lsm_task.c:39:13: warning: variable 'last_wake_time' set but not used [-Wunused-but-set-variable]
+   39 |  TickType_t last_wake_time;
+      |             ^~~~~~~~~~~~~~
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+c:\st\stm32cubeide_1.11.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954\tools\arm-none-eabi\bin\ld.exe: ./Core/tasks/src/matrix_task.o:C:/Users/cwx/Documents/Github/EE2028_stuff/assignment2_rtos/Debug/../Core/tasks/src/matrix_task.c:14: multiple definition of `g_accel_data'; ./Core/tasks/src/lsm_task.o:C:/Users/cwx/Documents/Github/EE2028_stuff/assignment2_rtos/Debug/../Core/tasks/src/lsm_task.c:13: first defined here
+c:\st\stm32cubeide_1.11.2\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954\tools\arm-none-eabi\bin\ld.exe: ./Core/tasks/src/matrix_task.o:C:/Users/cwx/Documents/Github/EE2028_stuff/assignment2_rtos/Debug/../Core/tasks/src/matrix_task.c:15: multiple definition of `g_gyro_data'; ./Core/tasks/src/lsm_task.o:C:/Users/cwx/Documents/Github/EE2028_stuff/assignment2_rtos/Debug/../Core/tasks/src/lsm_task.c:14: first defined here
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:91: assignment2_rtos.elf] Error 1
+"make -j20 all" terminated with exit code 2. Build might be incomplete.
+17:10:13 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/buzzer_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/buzzer_task.d" -MT"Core/tasks/src/buzzer_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/buzzer_task.o"
+arm-none-eabi-gcc "../Core/tasks/src/hts_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/hts_task.d" -MT"Core/tasks/src/hts_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/hts_task.o"
+arm-none-eabi-gcc "../Core/tasks/src/lis_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/lis_task.d" -MT"Core/tasks/src/lis_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/lis_task.o"
+arm-none-eabi-gcc "../Core/tasks/src/lps_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/lps_task.d" -MT"Core/tasks/src/lps_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/lps_task.o"
+arm-none-eabi-gcc "../Core/tasks/src/lsm_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/lsm_task.d" -MT"Core/tasks/src/lsm_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/lsm_task.o"
+arm-none-eabi-gcc "../Core/tasks/src/matrix_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/matrix_task.d" -MT"Core/tasks/src/matrix_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/matrix_task.o"
+arm-none-eabi-gcc "../Core/tasks/src/uart1_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/uart1_task.d" -MT"Core/tasks/src/uart1_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/uart1_task.o"
+arm-none-eabi-gcc "../Core/tasks/src/warship_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/warship_task.d" -MT"Core/tasks/src/warship_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/warship_task.o"
+../Core/tasks/src/hts_task.c: In function 'hts_task':
+../Core/tasks/src/hts_task.c:94:14: warning: variable 'last_wake_time' set but not used [-Wunused-but-set-variable]
+   94 |   TickType_t last_wake_time;
+      |              ^~~~~~~~~~~~~~
+../Core/tasks/src/lis_task.c: In function 'lis_task':
+../Core/tasks/src/lis_task.c:37:14: warning: variable 'last_wake_time' set but not used [-Wunused-but-set-variable]
+   37 |   TickType_t last_wake_time;
+      |              ^~~~~~~~~~~~~~
+../Core/tasks/src/lps_task.c: In function 'lps_notify_from_isr':
+../Core/tasks/src/lps_task.c:24:25: warning: passing argument 1 of 'vTaskNotifyGiveFromISR' from incompatible pointer type [-Wincompatible-pointer-types]
+   24 |  vTaskNotifyGiveFromISR(&lps_task_handle, xHigherPriorityTaskWoken);
+      |                         ^~~~~~~~~~~~~~~~
+      |                         |
+      |                         struct tskTaskControlBlock **
+In file included from ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h:57,
+                 from ../Core/tasks/inc/rtos_incs.h:13,
+                 from ../Core/tasks/src/lps_task.c:8:
+../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:2122:43: note: expected 'TaskHandle_t' {aka 'struct tskTaskControlBlock *'} but argument is of type 'struct tskTaskControlBlock **'
+ 2122 | void vTaskNotifyGiveFromISR( TaskHandle_t xTaskToNotify, BaseType_t *pxHigherPriorityTaskWoken ) PRIVILEGED_FUNCTION;
+      |                              ~~~~~~~~~~~~~^~~~~~~~~~~~~
+../Core/tasks/src/lps_task.c:24:43: warning: passing argument 2 of 'vTaskNotifyGiveFromISR' makes pointer from integer without a cast [-Wint-conversion]
+   24 |  vTaskNotifyGiveFromISR(&lps_task_handle, xHigherPriorityTaskWoken);
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                                           |
+      |                                           BaseType_t {aka long int}
+In file included from ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h:57,
+                 from ../Core/tasks/inc/rtos_incs.h:13,
+                 from ../Core/tasks/src/lps_task.c:8:
+../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:2122:70: note: expected 'BaseType_t *' {aka 'long int *'} but argument is of type 'BaseType_t' {aka 'long int'}
+ 2122 | void vTaskNotifyGiveFromISR( TaskHandle_t xTaskToNotify, BaseType_t *pxHigherPriorityTaskWoken ) PRIVILEGED_FUNCTION;
+      |                                                          ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/tasks/src/lps_task.c: In function 'lps_task':
+../Core/tasks/src/lps_task.c:29:14: warning: variable 'last_wake_time' set but not used [-Wunused-but-set-variable]
+   29 |   TickType_t last_wake_time;
+      |              ^~~~~~~~~~~~~~
+../Core/tasks/src/matrix_task.c: In function 'matrix_task':
+../Core/tasks/src/matrix_task.c:35:13: warning: unused variable 'last_wake_time' [-Wunused-variable]
+   35 |  TickType_t last_wake_time;
+      |             ^~~~~~~~~~~~~~
+../Core/tasks/src/lsm_task.c: In function 'lsm_task':
+../Core/tasks/src/lsm_task.c:39:13: warning: variable 'last_wake_time' set but not used [-Wunused-but-set-variable]
+   39 |  TickType_t last_wake_time;
+      |             ^~~~~~~~~~~~~~
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  75072	    676	  50528	 126276	  1ed44	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+17:10:34 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/matrix_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/matrix_task.d" -MT"Core/tasks/src/matrix_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/matrix_task.o"
+../Core/tasks/src/matrix_task.c: In function 'matrix_task':
+../Core/tasks/src/matrix_task.c:35:13: warning: unused variable 'last_wake_time' [-Wunused-variable]
+   35 |  TickType_t last_wake_time;
+      |             ^~~~~~~~~~~~~~
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  75072	    676	  50528	 126276	  1ed44	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+17:11:40 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/matrix_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/matrix_task.d" -MT"Core/tasks/src/matrix_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/matrix_task.o"
+../Core/tasks/src/matrix_task.c: In function 'matrix_task':
+../Core/tasks/src/matrix_task.c:35:13: warning: unused variable 'last_wake_time' [-Wunused-variable]
+   35 |  TickType_t last_wake_time;
+      |             ^~~~~~~~~~~~~~
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  75088	    676	  50528	 126292	  1ed54	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+17:13:22 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/matrix_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/matrix_task.d" -MT"Core/tasks/src/matrix_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/matrix_task.o"
+../Core/tasks/src/matrix_task.c: In function 'matrix_task':
+../Core/tasks/src/matrix_task.c:35:13: warning: unused variable 'last_wake_time' [-Wunused-variable]
+   35 |  TickType_t last_wake_time;
+      |             ^~~~~~~~~~~~~~
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  75088	    676	  50528	 126292	  1ed54	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+17:13:54 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/matrix_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/matrix_task.d" -MT"Core/tasks/src/matrix_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/matrix_task.o"
+../Core/tasks/src/matrix_task.c: In function 'matrix_task':
+../Core/tasks/src/matrix_task.c:35:13: warning: unused variable 'last_wake_time' [-Wunused-variable]
+   35 |  TickType_t last_wake_time;
+      |             ^~~~~~~~~~~~~~
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  75088	    676	  50528	 126292	  1ed54	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+17:16:14 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/matrix_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/matrix_task.d" -MT"Core/tasks/src/matrix_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/matrix_task.o"
+../Core/tasks/src/matrix_task.c: In function 'matrix_init':
+../Core/tasks/src/matrix_task.c:27:40: warning: passing argument 3 of 'HAL_I2C_Master_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+   27 |  HAL_I2C_Master_Transmit(&hi2c1, 0x70, tmp, 1, 0xFF);
+      |                                        ^~~
+      |                                        |
+      |                                        uint8_t {aka unsigned char}
+In file included from ../Core/Inc/stm32l4xx_hal_conf.h:342,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/tasks/inc/rtos_incs.h:11,
+                 from ../Core/tasks/src/matrix_task.c:9:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c.h:625:98: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  625 | HAL_StatusTypeDef HAL_I2C_Master_Transmit(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData,
+      |                                                                                         ~~~~~~~~~^~~~~
+../Core/tasks/src/matrix_task.c:32:40: warning: passing argument 3 of 'HAL_I2C_Master_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+   32 |  HAL_I2C_Master_Transmit(&hi2c1, 0x70, tmp, 1, 0xFF);
+      |                                        ^~~
+      |                                        |
+      |                                        uint8_t {aka unsigned char}
+In file included from ../Core/Inc/stm32l4xx_hal_conf.h:342,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/tasks/inc/rtos_incs.h:11,
+                 from ../Core/tasks/src/matrix_task.c:9:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c.h:625:98: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  625 | HAL_StatusTypeDef HAL_I2C_Master_Transmit(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData,
+      |                                                                                         ~~~~~~~~~^~~~~
+../Core/tasks/src/matrix_task.c:36:40: warning: passing argument 3 of 'HAL_I2C_Master_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+   36 |  HAL_I2C_Master_Transmit(&hi2c1, 0x70, tmp, 1, 0xFF);
+      |                                        ^~~
+      |                                        |
+      |                                        uint8_t {aka unsigned char}
+In file included from ../Core/Inc/stm32l4xx_hal_conf.h:342,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/tasks/inc/rtos_incs.h:11,
+                 from ../Core/tasks/src/matrix_task.c:9:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c.h:625:98: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  625 | HAL_StatusTypeDef HAL_I2C_Master_Transmit(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData,
+      |                                                                                         ~~~~~~~~~^~~~~
+../Core/tasks/src/matrix_task.c: In function 'matrix_task':
+../Core/tasks/src/matrix_task.c:42:13: warning: unused variable 'last_wake_time' [-Wunused-variable]
+   42 |  TickType_t last_wake_time;
+      |             ^~~~~~~~~~~~~~
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  75568	    676	  50528	 126772	  1ef34	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+17:16:28 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/matrix_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/matrix_task.d" -MT"Core/tasks/src/matrix_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/matrix_task.o"
+../Core/tasks/src/matrix_task.c: In function 'matrix_task':
+../Core/tasks/src/matrix_task.c:42:13: warning: unused variable 'last_wake_time' [-Wunused-variable]
+   42 |  TickType_t last_wake_time;
+      |             ^~~~~~~~~~~~~~
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  75552	    676	  50528	 126756	  1ef24	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+17:20:19 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/matrix_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/matrix_task.d" -MT"Core/tasks/src/matrix_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/matrix_task.o"
+../Core/tasks/src/matrix_task.c: In function 'matrix_task':
+../Core/tasks/src/matrix_task.c:43:13: warning: unused variable 'last_wake_time' [-Wunused-variable]
+   43 |  TickType_t last_wake_time;
+      |             ^~~~~~~~~~~~~~
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  75616	    676	  50528	 126820	  1ef64	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+17:20:50 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  75616	    676	  50528	 126820	  1ef64	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+17:31:54 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/matrix_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/matrix_task.d" -MT"Core/tasks/src/matrix_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/matrix_task.o"
+../Core/tasks/src/matrix_task.c: In function 'matrix_task':
+../Core/tasks/src/matrix_task.c:43:13: warning: unused variable 'last_wake_time' [-Wunused-variable]
+   43 |  TickType_t last_wake_time;
+      |             ^~~~~~~~~~~~~~
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  75552	    676	  50528	 126756	  1ef24	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+17:49:16 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/buzzer_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/buzzer_task.d" -MT"Core/tasks/src/buzzer_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/buzzer_task.o"
+../Core/tasks/src/buzzer_task.c: In function 'buzzer_task':
+../Core/tasks/src/buzzer_task.c:17:28: error: expected ')' before ';' token
+   17 | #define RESCUE_BEEP_DUR 100;
+      |                            ^
+../Core/tasks/src/buzzer_task.c:35:36: note: in expansion of macro 'RESCUE_BEEP_DUR'
+   35 |      } else if (uwTick-last_beep > RESCUE_BEEP_DUR){
+      |                                    ^~~~~~~~~~~~~~~
+../Core/tasks/src/buzzer_task.c:35:16: note: to match this '('
+   35 |      } else if (uwTick-last_beep > RESCUE_BEEP_DUR){
+      |                ^
+make: *** [Core/tasks/src/subdir.mk:40: Core/tasks/src/buzzer_task.o] Error 1
+"make -j20 all" terminated with exit code 2. Build might be incomplete.
+17:49:44 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/buzzer_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/buzzer_task.d" -MT"Core/tasks/src/buzzer_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/buzzer_task.o"
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  75728	    676	  50528	 126932	  1efd4	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+17:50:11 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/buzzer_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/buzzer_task.d" -MT"Core/tasks/src/buzzer_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/buzzer_task.o"
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  75728	    676	  50528	 126932	  1efd4	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+17:51:29 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/buzzer_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/buzzer_task.d" -MT"Core/tasks/src/buzzer_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/buzzer_task.o"
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  75872	    676	  50528	 127076	  1f064	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+17:53:11 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/buzzer_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/buzzer_task.d" -MT"Core/tasks/src/buzzer_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/buzzer_task.o"
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  75920	    676	  50528	 127124	  1f094	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+17:54:42 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/buzzer_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/buzzer_task.d" -MT"Core/tasks/src/buzzer_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/buzzer_task.o"
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  75904	    676	  50528	 127108	  1f084	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+17:55:54 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/buzzer_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/buzzer_task.d" -MT"Core/tasks/src/buzzer_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/buzzer_task.o"
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  75920	    676	  50528	 127124	  1f094	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+17:56:11 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/buzzer_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/buzzer_task.d" -MT"Core/tasks/src/buzzer_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/buzzer_task.o"
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  75920	    676	  50528	 127124	  1f094	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+17:57:02 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/buzzer_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/buzzer_task.d" -MT"Core/tasks/src/buzzer_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/buzzer_task.o"
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  75920	    676	  50528	 127124	  1f094	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+17:57:53 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/buzzer_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/buzzer_task.d" -MT"Core/tasks/src/buzzer_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/buzzer_task.o"
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  75920	    676	  50528	 127124	  1f094	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+17:59:27 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/buzzer_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/buzzer_task.d" -MT"Core/tasks/src/buzzer_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/buzzer_task.o"
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  75920	    676	  50528	 127124	  1f094	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+18:01:52 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/buzzer_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/buzzer_task.d" -MT"Core/tasks/src/buzzer_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/buzzer_task.o"
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  75952	    676	  50528	 127156	  1f0b4	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+18:02:19 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/buzzer_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/buzzer_task.d" -MT"Core/tasks/src/buzzer_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/buzzer_task.o"
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  75952	    676	  50528	 127156	  1f0b4	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+18:02:43 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/buzzer_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/buzzer_task.d" -MT"Core/tasks/src/buzzer_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/buzzer_task.o"
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  75952	    676	  50528	 127156	  1f0b4	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+18:03:15 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/buzzer_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/buzzer_task.d" -MT"Core/tasks/src/buzzer_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/buzzer_task.o"
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  75952	    676	  50528	 127156	  1f0b4	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+18:05:55 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/buzzer_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/buzzer_task.d" -MT"Core/tasks/src/buzzer_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/buzzer_task.o"
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+../Core/tasks/src/buzzer_task.c: In function 'buzzer_task':
+../Core/tasks/src/buzzer_task.c:103:6: error: a label can only be part of a statement and a declaration is not a statement
+  103 |      float semiquaver_time = 60000 / (4 * TEMPO);
+      |      ^~~~~
+../Core/tasks/src/buzzer_task.c:106:10: error: 'last_wake_time' undeclared (first use in this function)
+  106 |          last_wake_time = xTaskGetTickCount();
+      |          ^~~~~~~~~~~~~~
+../Core/tasks/src/buzzer_task.c:106:10: note: each undeclared identifier is reported only once for each function it appears in
+../Core/tasks/src/buzzer_task.c:108:10: error: 'note_time' undeclared (first use in this function)
+  108 |          note_time = (semiquaver_time * note_length[i]);
+      |          ^~~~~~~~~
+../Core/tasks/src/buzzer_task.c:114:19: error: 'buzzer_task_handle' undeclared (first use in this function); did you mean 'uart1_task_handle'?
+  114 |      vTaskSuspend(buzzer_task_handle);
+      |                   ^~~~~~~~~~~~~~~~~~
+      |                   uart1_task_handle
+make: *** [Core/tasks/src/subdir.mk:40: Core/tasks/src/buzzer_task.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j20 all" terminated with exit code 2. Build might be incomplete.
+18:06:38 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/buzzer_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/buzzer_task.d" -MT"Core/tasks/src/buzzer_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/buzzer_task.o"
+arm-none-eabi-gcc "../Core/tasks/src/hts_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/hts_task.d" -MT"Core/tasks/src/hts_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/hts_task.o"
+arm-none-eabi-gcc "../Core/tasks/src/lis_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/lis_task.d" -MT"Core/tasks/src/lis_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/lis_task.o"
+arm-none-eabi-gcc "../Core/tasks/src/lps_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/lps_task.d" -MT"Core/tasks/src/lps_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/lps_task.o"
+arm-none-eabi-gcc "../Core/tasks/src/lsm_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/lsm_task.d" -MT"Core/tasks/src/lsm_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/lsm_task.o"
+arm-none-eabi-gcc "../Core/tasks/src/matrix_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/matrix_task.d" -MT"Core/tasks/src/matrix_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/matrix_task.o"
+arm-none-eabi-gcc "../Core/tasks/src/uart1_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/uart1_task.d" -MT"Core/tasks/src/uart1_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/uart1_task.o"
+arm-none-eabi-gcc "../Core/tasks/src/warship_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/warship_task.d" -MT"Core/tasks/src/warship_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/warship_task.o"
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+../Core/tasks/src/hts_task.c: In function 'hts_task':
+../Core/tasks/src/hts_task.c:94:14: warning: variable 'last_wake_time' set but not used [-Wunused-but-set-variable]
+   94 |   TickType_t last_wake_time;
+      |              ^~~~~~~~~~~~~~
+../Core/tasks/src/lis_task.c: In function 'lis_task':
+../Core/tasks/src/lis_task.c:37:14: warning: variable 'last_wake_time' set but not used [-Wunused-but-set-variable]
+   37 |   TickType_t last_wake_time;
+      |              ^~~~~~~~~~~~~~
+../Core/tasks/src/buzzer_task.c: In function 'buzzer_task':
+../Core/tasks/src/buzzer_task.c:109:10: error: 'note_time' undeclared (first use in this function)
+  109 |          note_time = (semiquaver_time * note_length[i]);
+      |          ^~~~~~~~~
+../Core/tasks/src/buzzer_task.c:109:10: note: each undeclared identifier is reported only once for each function it appears in
+../Core/tasks/src/lsm_task.c: In function 'lsm_task':
+../Core/tasks/src/lsm_task.c:39:13: warning: variable 'last_wake_time' set but not used [-Wunused-but-set-variable]
+   39 |  TickType_t last_wake_time;
+      |             ^~~~~~~~~~~~~~
+../Core/tasks/src/lps_task.c: In function 'lps_notify_from_isr':
+../Core/tasks/src/lps_task.c:24:25: warning: passing argument 1 of 'vTaskNotifyGiveFromISR' from incompatible pointer type [-Wincompatible-pointer-types]
+   24 |  vTaskNotifyGiveFromISR(&lps_task_handle, xHigherPriorityTaskWoken);
+      |                         ^~~~~~~~~~~~~~~~
+      |                         |
+      |                         struct tskTaskControlBlock **
+In file included from ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h:57,
+                 from ../Core/tasks/inc/rtos_incs.h:13,
+                 from ../Core/tasks/src/lps_task.c:8:
+../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:2122:43: note: expected 'TaskHandle_t' {aka 'struct tskTaskControlBlock *'} but argument is of type 'struct tskTaskControlBlock **'
+ 2122 | void vTaskNotifyGiveFromISR( TaskHandle_t xTaskToNotify, BaseType_t *pxHigherPriorityTaskWoken ) PRIVILEGED_FUNCTION;
+      |                              ~~~~~~~~~~~~~^~~~~~~~~~~~~
+../Core/tasks/src/lps_task.c:24:43: warning: passing argument 2 of 'vTaskNotifyGiveFromISR' makes pointer from integer without a cast [-Wint-conversion]
+   24 |  vTaskNotifyGiveFromISR(&lps_task_handle, xHigherPriorityTaskWoken);
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                                           |
+      |                                           BaseType_t {aka long int}
+In file included from ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h:57,
+                 from ../Core/tasks/inc/rtos_incs.h:13,
+                 from ../Core/tasks/src/lps_task.c:8:
+../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:2122:70: note: expected 'BaseType_t *' {aka 'long int *'} but argument is of type 'BaseType_t' {aka 'long int'}
+ 2122 | void vTaskNotifyGiveFromISR( TaskHandle_t xTaskToNotify, BaseType_t *pxHigherPriorityTaskWoken ) PRIVILEGED_FUNCTION;
+      |                                                          ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/tasks/src/lps_task.c: In function 'lps_task':
+../Core/tasks/src/lps_task.c:29:14: warning: variable 'last_wake_time' set but not used [-Wunused-but-set-variable]
+   29 |   TickType_t last_wake_time;
+      |              ^~~~~~~~~~~~~~
+make: *** [Core/tasks/src/subdir.mk:40: Core/tasks/src/buzzer_task.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/tasks/src/matrix_task.c: In function 'matrix_task':
+../Core/tasks/src/matrix_task.c:43:13: warning: unused variable 'last_wake_time' [-Wunused-variable]
+   43 |  TickType_t last_wake_time;
+      |             ^~~~~~~~~~~~~~
+"make -j20 all" terminated with exit code 2. Build might be incomplete.
+18:06:51 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/buzzer_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/buzzer_task.d" -MT"Core/tasks/src/buzzer_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/buzzer_task.o"
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  77184	    676	  50528	 128388	  1f584	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+18:07:31 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/buzzer_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/buzzer_task.d" -MT"Core/tasks/src/buzzer_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/buzzer_task.o"
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  77184	    676	  50528	 128388	  1f584	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+18:08:54 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/buzzer_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/buzzer_task.d" -MT"Core/tasks/src/buzzer_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/buzzer_task.o"
+../Core/tasks/src/buzzer_task.c: In function 'buzzer_task':
+../Core/tasks/src/buzzer_task.c:73:12: warning: variable 'volume' set but not used [-Wunused-but-set-variable]
+   73 |    uint8_t volume = 0;
+      |            ^~~~~~
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  77232	    676	  50528	 128436	  1f5b4	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+18:09:23 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/buzzer_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/buzzer_task.d" -MT"Core/tasks/src/buzzer_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/buzzer_task.o"
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  77248	    676	  50528	 128452	  1f5c4	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+18:11:56 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/buzzer_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/buzzer_task.d" -MT"Core/tasks/src/buzzer_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/buzzer_task.o"
+arm-none-eabi-gcc "../Core/tasks/src/uart1_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/uart1_task.d" -MT"Core/tasks/src/uart1_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/uart1_task.o"
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  77072	    676	  50528	 128276	  1f514	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+18:12:20 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/buzzer_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/buzzer_task.d" -MT"Core/tasks/src/buzzer_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/buzzer_task.o"
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  77072	    676	  50528	 128276	  1f514	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+18:12:49 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/buzzer_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/buzzer_task.d" -MT"Core/tasks/src/buzzer_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/buzzer_task.o"
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  77072	    676	  50528	 128276	  1f514	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+18:13:13 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/buzzer_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/buzzer_task.d" -MT"Core/tasks/src/buzzer_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/buzzer_task.o"
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  77072	    676	  50528	 128276	  1f514	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 
+18:14:04 **** Incremental Build of configuration Debug for project assignment2_rtos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/tasks/src/buzzer_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/BSP/B-L475E-IOT01 -I../Core/tasks/inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/tasks/src/buzzer_task.d" -MT"Core/tasks/src/buzzer_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/tasks/src/buzzer_task.o"
+arm-none-eabi-g++ -o "assignment2_rtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cwx\Documents\Github\EE2028_stuff\assignment2_rtos\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="assignment2_rtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: assignment2_rtos.elf
+ 
+arm-none-eabi-size   assignment2_rtos.elf 
+arm-none-eabi-objdump -h -S  assignment2_rtos.elf  > "assignment2_rtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  77072	    676	  50528	 128276	  1f514	assignment2_rtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: assignment2_rtos.list
+ 

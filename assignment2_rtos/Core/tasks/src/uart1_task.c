@@ -137,8 +137,7 @@ void uart1_task(void* pvParameters){
 										g_mag_data.x, g_mag_data.y, g_mag_data.z);
 					tx_len += snprintf(tx_buffer+tx_len, BUFFER_SIZE-tx_len, 	"|P: %.4fpa		|H: %d%%RH\r\n",
 										g_pressure_data.pressure, g_temphum_data.humidity);
-					tx_len += snprintf(tx_buffer+tx_len, BUFFER_SIZE-tx_len, 	"Mode:%d \r\n",
-										g_warship_state);
+
 				}
 				prev_state = RESCUE;
 				delay_time = 1000;
@@ -191,8 +190,7 @@ void uart1_task(void* pvParameters){
 										g_mag_data.x, g_mag_data.y, g_mag_data.z);
 					tx_len += snprintf(tx_buffer+tx_len, BUFFER_SIZE-tx_len, 	"|P: %.4fpa		|H: %d%%RH 		|T: %.4fC 		| \r\n",
 										g_pressure_data.pressure, g_temphum_data.humidity, g_temphum_data.temperature);
-					tx_len += snprintf(tx_buffer+tx_len, BUFFER_SIZE-tx_len, 	"Mode:%d \r\n",
-										g_warship_state);
+
 				}
 
 				prev_state = BATTLE;

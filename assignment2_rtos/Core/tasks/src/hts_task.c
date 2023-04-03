@@ -13,7 +13,7 @@
 
 hts_data_t g_temphum_data;
 extern warship_state_e g_warship_state;
-volatile uint8_t enable_extras = 0;
+extern uint8_t enable_extras;
 
 void hts_notif(){
 

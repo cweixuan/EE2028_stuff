@@ -46,7 +46,6 @@ void lis_task(void* pvParameters){
 	// this returns 16 bit integers of magnetic field in mGauss (1/1000 Gauss)
 	xSemaphoreGive(iic2Mutex);
 	while(1){
-		if ()
 		ulTaskNotifyTake(pdTRUE, 2000);
 		xSemaphoreTake(iic2Mutex,portMAX_DELAY);
 		last_wake_time = xTaskGetTickCount();

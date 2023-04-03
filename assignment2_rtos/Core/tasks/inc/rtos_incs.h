@@ -21,6 +21,7 @@ extern TaskHandle_t lps_task_handle;
 extern TaskHandle_t lsm_task_handle;
 extern TaskHandle_t hts_task_handle;
 extern TaskHandle_t warship_task_handle;
+extern TaskHandle_t buzzer_task_handle;
 
 
 extern SemaphoreHandle_t iic2Mutex;
